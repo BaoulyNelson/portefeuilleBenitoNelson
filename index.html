@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portefeuille de Benito Nelson</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <header>
+        <h1 class="header-title">Benito NELSON - Portefeuille</h1>
+    </header>
+    <nav>
+        <ul class="nav-list">
+            <li><a href="index.html"><h3> Accueil</h3></a></li>
+            <li><a href="famille.html"><h3>Famille </h3></a></li>
+            <li><a href="contact.html"><h3>Contact </h3></a></li>
+        </ul>
+    </nav>
+    <section id="Accueil" class="about-section">
+       
+        <h2 class="section-title">À propos de moi</h2>
+        <img src="bnito.jpg" class="top-left-image" alt="Image d'accueil">
+        <p class="about-paragraph">
+        Bonjour à tous, je m'appelle Benito Nelson, mais on me connaît souvent sous le surnom d'El Conquistador Baouly. Je suis originaire de Jacmel, en Haïti, et ma date de naissance est le 4 août 2000.
+
+        <p class="about-paragraph">J'ai suivi mes études primaires au Collège Bethesda Nossilherl Lherisson, puis j'ai poursuivi mon parcours académique à l'IDEPH (Institution du bon Pasteur) pour mes études secondaires. Actuellement, je suis diplômé de l'ESIH (École Supérieure d'Infotronique d'Haïti) en tant qu'informaticien.</p>
+
+        <p class="about-paragraph">Sur le plan personnel, je suis célibataire et ma taille est de 1,60 m. Mon aspiration professionnelle est de devenir un analyste programmeur, et j'habite à Pelerin 5A, Haïti.</p>
+
+        <p class="about-paragraph">  Je suis passionné par l'informatique et je suis un humaniste dans l'âme. J'ai également une forte inclination pour la philanthropie et j'essaie toujours de contribuer à des projets bénéfiques pour la société.</p>
+
+        <p class="about-paragraph"> Si vous avez des questions ou si vous souhaitez en savoir plus sur mes compétences, expériences ou tout autre aspect de ma vie, n'hésitez pas à me contacter. Je suis ravi de faire partie de cette réunion et d'apprendre à vous connaître tous.</p>
+        </p>
+       
+        
+    
+        
+        <!-- Votre section "Portfolio" ici -->
+    </section>
+    <section id="contact" class="contact-section">
+        <!-- Formulaire de contact PHP ici -->
+        <form method="post" action="envoyer_message.php">
+            <label for="nom" class="form-label">Nom :</label>
+            <input type="text" name="nom" class="form-input" required>
+
+            <label for="email" class="form-label">Email :</label>
+            <input type="email" name="email" class="form-input" required>
+
+            <label for="message" class="form-label">Message :</label>
+            <textarea name="message" class="form-textarea" required></textarea>
+
+            <input type="submit" value="Envoyer" class="form-submit-button">
+        </form>
+    </section>
+</body>
+<footer>
+    <p>&copy; 2023 Benito NELSON - Tous droits réservés.</p>
+</footer>
+</html>
