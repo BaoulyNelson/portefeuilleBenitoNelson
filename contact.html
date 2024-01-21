@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="CSS/stylesDate.css">
     <link rel="stylesheet" href="CSS/stylesMonterHaut.css">
     <link rel="stylesheet" href="CSS/menu.css">
+    <link rel="stylesheet" href="CSS/stylesRecherche.css">
+    
+<!-- Assurez-vous d'inclure la bibliothèque Font Awesome dans votre fichier HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-GLhlTQ8iKStXZ5l/Afbno3PKYUD4qzpo5F8+YR5FZtAtUHzq4Ux4bUDxpxI3Wr2Q" crossorigin="anonymous">
+
     <script src="https://kit.fontawesome.com/4675b5c56a.js" crossorigin="anonymous"></script>
 </head>
 
@@ -31,10 +36,13 @@
             <a href="index.html" onclick="showContent('index.html')">Accueil</a>
             <a href="famille.html" onclick="showContent('famille.html')">Famille</a>
             <a href="contact.html" onclick="showContent('contact.html')">Contact</a>
+           
         </div>
     </div>
     
-
+    <div class="header">
+        <p id="current-time"></p>
+    </div>
     <div class="search-icon" onclick="toggleSearch()">
         <i class="fas fa-search"></i>
     </div>
@@ -47,7 +55,11 @@
 
   
 </header>
+
 <body>
+    <div class="wrapper">
+        <div class="content">
+      
   <!-- Ajoutez cette balise div autour de votre image -->
 <div class="image-container">
     <img src="IMAGES/benito.jpg" class="top-left-image" alt="Image d'accueil">
@@ -60,22 +72,24 @@
             A la demande générale, j'ai développé plusieurs programmes d'accompagnement pour les professionnels face aux problématiques qu'ils rencontrent quotidiennement pour développer.
         </p>
     </div>
-    
-    <script>
-        document.getElementById("current-year").textContent = new Date().getFullYear();
-      </script>
-      <script src="SCRIPT/scriptDate.js"></script>
-      <script src="SCRIPT/script.js"></script>
-  <script src="SCRIPT/scriptMonterHaut.js"></script>
-  <script src="SCRIPT/scriptRecherche.js"></script>
-  <script src="SCRIPT/scriptMenu.js"></script>
+ 
+   
+    <script src="SCRIPT/scriptDate.js"></script>
+    <script src="SCRIPT/script.js"></script>
+    <script src="SCRIPT/scriptMonterHaut.js"></script>
+    <script src="SCRIPT/scriptRecherche.js"></script>
+    <script src="SCRIPT/scriptMenu.js"></script>
 
+</div>
+</div>
 
-
-
-      
 </body>
 <footer>
+  
+    <div class="navigation-buttons">
+        <button class="prev-button" onclick="showPreviousContent()"><i class="fas fa-chevron-left"></i> Précédent</button>
+        <button class="next-button" onclick="showNextContent()">Suivant <i class="fas fa-chevron-right"></i></button>
+    </div>
       <!-- Ajoutez ceci à l'endroit où vous voulez afficher la flèche -->
 <button id="backToTopBtn" title="Retour en haut">&#9650;</button>
      <!-- Ajoutez ici le contenu du pied de page -->
@@ -121,5 +135,14 @@
     <p>Zone: Pelerin, commune de Pétion-Ville, Ouest, Haïti</p>
     <p id="copyright">&copy; <span id="current-year"></span> Baouly NELSON inc. Tous droits réservés.</p>
 
+    <script>
+        try {
+            // Essayer d'exécuter le script
+            document.getElementById("current-year").textContent = new Date().getFullYear();
+        } catch (error) {
+            // En cas d'erreur, afficher l'erreur dans la console
+            console.error("Erreur JavaScript :", error.message);
+        }
+    </script>
 </footer>
 </html>

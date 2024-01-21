@@ -12,8 +12,11 @@
     <link rel="stylesheet" href="CSS/stylesFooter.css">
     <link rel="stylesheet" href="CSS/stylesDate.css">
     <link rel="stylesheet" href="CSS/menu.css">
+    <link rel="stylesheet" href="CSS/stylesRecherche.css">
 
-    <script src="https://kit.fontawesome.com/4675b5c56a.js" crossorigin="anonymous"></script>
+<!-- Assurez-vous d'inclure la bibliothèque Font Awesome dans votre fichier HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-GLhlTQ8iKStXZ5l/Afbno3PKYUD4qzpo5F8+YR5FZtAtUHzq4Ux4bUDxpxI3Wr2Q" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/4675b5c56a.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -21,22 +24,30 @@
     <div class="logo">
         <img src="IMAGES/baouly.jpg" alt="Logo du site">
     </div>
-
+   
     <div class="menu-container">
-        <div class="menu-icon" onclick="toggleMenu()">
+        <div class="menu-icon" onclick="toggleMenu()" id="menu">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
-    
         </div>
-    
+        
+        <div class="clear-menu hidden" id="clearMenuButton" onclick="clearMenu()">
+            <i class="fas fa-times" title="clear menu"></i>
+        </div>
+        
+        
+
         <div class="menu-links">
             <a href="index.html" onclick="showContent('index.html')">Accueil</a>
             <a href="famille.html" onclick="showContent('famille.html')">Famille</a>
             <a href="contact.html" onclick="showContent('contact.html')">Contact</a>
+             
         </div>
     </div>
-    
+    <div class="header">
+        <p id="current-time"></p>
+    </div>
 
     <div class="search-icon" onclick="toggleSearch()">
         <i class="fas fa-search"></i>
@@ -45,13 +56,18 @@
     <div class="search-container" id="search-container">
         <input type="text" placeholder="&#128269;">
         <i class="fas fa-times" onclick="toggleSearch()"></i>
+        
     </div>
-
+<!-- Ajoutez cette section après votre barre de recherche -->
+<div id="search-results" class="search-results"></div>
 
 </header>
-<body>
-    
 
+<body>
+    <div class="wrapper">
+        <div class="content">
+           
+    <div class="content-section">
     <h2 class="section-title text-container">À propos de moi</h2>
 
     <div class="about-container">
@@ -82,42 +98,95 @@
             autre aspect de ma vie, n'hésitez pas à me contacter. Je suis ravi de faire partie de cette réunion et
             d'apprendre à vous connaître tous.
         </p>
+      
+            <p class="about-paragraph">
+                En tant qu'étudiant passionné d'informatique, je me définis comme un explorateur du monde numérique. Ma fascination pour les dernières avancées technologiques m'a conduit à développer des compétences approfondies en programmation, notamment avec HTML, CSS et JavaScript.
+            </p>
+        
+            <p class="about-paragraph">
+                Mon champ d'expertise s'étend également à des domaines spécifiques tels que le développement sur Shopify et la création graphique avec Canva. Mon objectif ultime est de devenir indépendant en continuant d'acquérir des connaissances pointues.
+            </p>
+        
+            <p class="about-paragraph">
+                Au-delà du code, ma passion pour la création se traduit par ma capacité à concevoir des expériences utilisateur exceptionnelles. Mon engagement envers l'apprentissage continu définit ma vision en tant que professionnel de la technologie.
+            </p>
+       
+        
     </div>
 
-
-
-
-
+    <div id="service">
+        <div class="container">
+            <h1 class="sous-titre">Services</h1>
+            <div class="services-list">
+                <div class="service-item" data-aos='fade-right' data-aos-duration="1100">
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Creation de Site Web</h2>
+                    <p>Je crée des sites web uniques et personnalisés en fonction des besoins et des objectifs de mes clients. Chaque site est conçu avec une attention particulière aux détails, à l'esthétique et à l'expérience utilisateur.</p>
+                </div>
+    
+                <div class="service-item" data-aos='fade-right' data-aos-duration="1100">
+                    <i class="fa-solid fa-check"></i>
+                    <h2>Optimisation des Performances Web</h2>
+                    <p>Mon expertise réside dans l'optimisation des performances de votre présence en ligne. Je m'engage à accélérer le chargement de vos pages web, à améliorer l'efficacité de vos applications et à garantir une expérience utilisateur fluide.</p>
+                </div>
+    
+                <div class="service-item" data-aos='fade-right' data-aos-duration="1100">
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>Creation d'Application Mobile</h2>
+                    <p>Je crée des applications mobiles personnalisées pour les plateformes Android et iOS. En travaillant en étroite collaboration avec vous, je transforme vos idées en applications mobiles fonctionnelles et esthétiques.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- Votre section "Portfolio" ici -->
     </section>
     <section id="contact" class="contact-section">
         <!-- Formulaire de contact PHP ici -->
-        <form method="post" action="envoyer_message.php">
+        <form method="post" action="https://docs.google.com/forms/d/e/1FAIpQLSfvY8EMFk9Sp4D_-oyGils0Jar2-lE0shkCqCQdj253St001g/formResponse" target="_blank" accept-charset="UTF-8">
+           
+            <!-- Champ Nom -->
             <label for="nom" class="form-label">Nom :</label>
-            <input type="text" name="nom" class="form-input" required>
+            <input type="text" name="entry.Nom" class="form-input" required>
+    
+            <!-- Champ Prenom -->
+            <label for="prenom" class="form-label">Prénom :</label>
+            <input type="text" name="entry.Prenom" class="form-input" required>
+     
+            <!-- Champ Email -->
+            <label for="email" class="form-label">E-mail :</label>
+            <input type="email" name="entry.Email" class="form-input" required>
+            
 
-            <label for="email" class="form-label">Email :</label>
-            <input type="email" name="email" class="form-input" required>
-
-            <label for="message" class="form-label">Message :</label>
-            <textarea name="message" class="form-textarea" required></textarea>
-
+            <!-- Champ Commentaires -->
+            <label for="commentaires" class="form-label">Commentaires :</label>
+            <textarea name="entry.Commentaires" class="form-textarea" required></textarea>
+    
+            <!-- Bouton Envoyer -->
             <input type="submit" value="Envoyer" class="form-submit-button">
         </form>
     </section>
-    <script>
-        document.getElementById("current-year").textContent = new Date().getFullYear();
-    </script>
+    
+</div>
+    
+ 
     <script src="SCRIPT/scriptDate.js"></script>
     <script src="SCRIPT/script.js"></script>
     <script src="SCRIPT/scriptMonterHaut.js"></script>
     <script src="SCRIPT/scriptMenu.js"></script>
+    <script src="SCRIPT/scriptRecherche.js"></script>
 
-
+</div>
+</div>
 
 </body>
 
 <footer>
+   
+    <div class="navigation-buttons">
+        <button class="prev-button" onclick="showPreviousContent()"><i class="fas fa-chevron-left"></i> Précédent</button>
+        <button class="next-button" onclick="showNextContent()">Suivant <i class="fas fa-chevron-right"></i></button>
+    </div>
     <!-- Ajoutez ceci à l'endroit où vous voulez afficher la flèche -->
     <button id="backToTopBtn" title="Retour en haut">&#9650;</button>
 
@@ -160,10 +229,29 @@
         <i class="fab fa-youtube"></i>
     </a>
 
+    <!-- Icône LinkedIn -->
+    <a href="https://LinkedIn.com/" target="_blank" class="icon">
+        <i class="fab fa-linkedin"></i>
+    </a>
+
+    <!-- Icône GitHub -->
+    <a href="https://github.com/" target="_blank" class="icon">
+        <i class="fab fa-github"></i>
+    </a>
     <p>Tel: 44521822 / 47403551</p>
     <p>Zone: Pelerin, commune de Pétion-Ville, Ouest, Haïti</p>
     <p id="copyright">&copy; <span id="current-year"></span> Baouly NELSON inc. Tous droits réservés.</p>
 
+    <script>
+        try {
+            // Essayer d'exécuter le script
+            document.getElementById("current-year").textContent = new Date().getFullYear();
+        } catch (error) {
+            // En cas d'erreur, afficher l'erreur dans la console
+            console.error("Erreur JavaScript :", error.message);
+        }
+    </script>
+    
 </footer>
 
 </html>

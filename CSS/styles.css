@@ -7,7 +7,13 @@
     flex-direction: column;
     min-height: 100vh;
     /* Cela assure que la hauteur du contenu est au moins égale à la hauteur de la fenêtre. */
+    
 }
+
+.wrapper {
+    flex: 1;
+}
+
 
 header {
     background-color: #333;
@@ -120,10 +126,10 @@ main {
 
 
 .about-container {
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
     text-align: justify;
-    background-color: #f2f2f2; /* Nouvelle propriété pour la couleur de fond gris clair */
+    background-color: #227dea; /* Nouvelle propriété pour la couleur de fond gris clair */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -135,11 +141,15 @@ main {
 
 /* Ajouter les styles pour la couleur et l'animation du titre */
 .text-container {
-    max-width: 600px; /* Limite la largeur à 600 pixels */
+    max-width: 500px; /* Limite la largeur à 600 pixels */
     margin: 0 auto; /* Centre horizontalement */
-    text-align: justify; /* Justifie le texte à l'intérieur */
     color: red; /* Changer la couleur du texte à rouge */
     white-space: nowrap; /* Empêche le retour à la ligne pour l'effet de lettre par lettre */
+    text-align: center; /* Centre horizontalement */
+    display: flex; /* Permet une disposition flexbox */
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement (si nécessaire) */
+   
 }
 
 /* Ajouter l'animation pour le délai d'apparition de chaque lettre */
@@ -153,7 +163,7 @@ main {
 }
 
 /* Appliquer l'animation au titre */
-.section-title {
+.section-title,.sous-titre {
     animation: fadeIn 1.5s ease-in-out, appear 0.5s steps(1, end); /* Ajouter l'animation de fondu et de délai d'apparition de lettre */
 }
 
@@ -161,5 +171,35 @@ main {
     from {
         width: 0;
     }
+}
+
+
+.services-list {
+    display: flex;
+    justify-content: space-between; /* Ajustez selon vos besoins */
+    flex-wrap: wrap; /* Permet à vos éléments de passer à la ligne si l'espace est insuffisant */
+}
+
+.service-item {
+    background-color: aqua;
+    width: 30%; /* Ajustez selon vos besoins */
+    margin-bottom: 0px; /* Espacement entre les éléments */
+    box-sizing: border-box;
+    padding: 5px;
+    max-width: 200px; /* Ajustez la largeur maximale selon vos besoins */
+    border: 2px solid #227; /* Ajoute une bordure grise autour de chaque bloc */
+
+}
+
+.container {
+    text-align: center; /* Centre le texte à l'intérieur du conteneur */
+}
+
+.sous-titre {
+    color: black; /* Couleur du titre "Services" */
+}
+
+.service-item h2 {
+    color: red; /* Couleur des autres titres */
 }
 
