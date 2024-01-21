@@ -1,42 +1,94 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Portefeuille de Benito Nelson</title>
     <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/stylesMonterHaut.css">
+    <link rel="stylesheet" href="CSS/stylesFormulaire.css">
+    <link rel="stylesheet" href="CSS/stylesFooter.css">
+    <link rel="stylesheet" href="CSS/stylesDate.css">
+    <link rel="stylesheet" href="CSS/menu.css">
+
+    <script src="https://kit.fontawesome.com/4675b5c56a.js" crossorigin="anonymous"></script>
+
 </head>
-<body>
-    <header>
-        <h1 class="header-title">Benito NELSON - Portefeuille</h1>
-    </header>
-    <nav>
-        <ul class="nav-list">
-            <li><a href="index.html"><h3> Accueil</h3></a></li>
-            <li><a href="famille.html"><h3>Famille </h3></a></li>
-            <li><a href="contact.html"><h3>Contact </h3></a></li>
-        </ul>
-    </nav>
-    <section id="Accueil" class="about-section">
-       
-        <h2 class="section-title">À propos de moi</h2>
-        <img src="bnito.jpg" class="top-left-image" alt="Image d'accueil">
-        <p class="about-paragraph">
-        Bonjour à tous, je m'appelle Benito Nelson, mais on me connaît souvent sous le surnom d'El Conquistador Baouly. Je suis originaire de Jacmel, en Haïti, et ma date de naissance est le 4 août 2000.
 
-        <p class="about-paragraph">J'ai suivi mes études primaires au Collège Bethesda Nossilherl Lherisson, puis j'ai poursuivi mon parcours académique à l'IDEPH (Institution du bon Pasteur) pour mes études secondaires. Actuellement, je suis diplômé de l'ESIH (École Supérieure d'Infotronique d'Haïti) en tant qu'informaticien.</p>
+<header>
+    <div class="logo">
+        <img src="IMAGES/baouly.jpg" alt="Logo du site">
+    </div>
 
-        <p class="about-paragraph">Sur le plan personnel, je suis célibataire et ma taille est de 1,60 m. Mon aspiration professionnelle est de devenir un analyste programmeur, et j'habite à Pelerin 5A, Haïti.</p>
-
-        <p class="about-paragraph">  Je suis passionné par l'informatique et je suis un humaniste dans l'âme. J'ai également une forte inclination pour la philanthropie et j'essaie toujours de contribuer à des projets bénéfiques pour la société.</p>
-
-        <p class="about-paragraph"> Si vous avez des questions ou si vous souhaitez en savoir plus sur mes compétences, expériences ou tout autre aspect de ma vie, n'hésitez pas à me contacter. Je suis ravi de faire partie de cette réunion et d'apprendre à vous connaître tous.</p>
-        </p>
-       
-        
+    <div class="menu-container">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
     
-        
-        <!-- Votre section "Portfolio" ici -->
+        </div>
+    
+        <div class="menu-links">
+            <a href="index.html" onclick="showContent('index.html')">Accueil</a>
+            <a href="famille.html" onclick="showContent('famille.html')">Famille</a>
+            <a href="contact.html" onclick="showContent('contact.html')">Contact</a>
+        </div>
+    </div>
+    
+
+    <div class="search-icon" onclick="toggleSearch()">
+        <i class="fas fa-search"></i>
+    </div>
+    
+    <div class="search-container" id="search-container">
+        <input type="text" placeholder="&#128269;">
+        <i class="fas fa-times" onclick="toggleSearch()"></i>
+    </div>
+
+
+</header>
+<body>
+    
+
+    <h2 class="section-title text-container">À propos de moi</h2>
+
+    <div class="about-container">
+        <p class="about-paragraph">
+            Bonjour à tous, je m'appelle Benito Nelson, mais on me connaît souvent sous le surnom d'El Conquistador
+            Baouly. Je suis originaire de Jacmel, en Haïti, et ma date de naissance est le 4 août 2000.
+        </p>
+
+        <p class="about-paragraph">
+            J'ai suivi mes études primaires au Collège Bethesda Nossilherl Lherisson, puis j'ai poursuivi mon parcours
+            académique à l'IDEPH (Institution du bon Pasteur) pour mes études secondaires. Actuellement, je suis diplômé
+            de l'ESIH (École Supérieure d'Infotronique d'Haïti) en tant qu'informaticien.
+        </p>
+
+        <p class="about-paragraph">
+            Sur le plan personnel, je suis célibataire et ma taille est de 1,60 m. Mon aspiration professionnelle est de
+            devenir un analyste programmeur, et j'habite à Pelerin 5A, Haïti.
+        </p>
+
+        <p class="about-paragraph">
+            Je suis passionné par l'informatique et je suis un humaniste dans l'âme. J'ai également une forte
+            inclination pour la philanthropie et j'essaie toujours de contribuer à des projets bénéfiques pour la
+            société.
+        </p>
+
+        <p class="about-paragraph">
+            Si vous avez des questions ou si vous souhaitez en savoir plus sur mes compétences, expériences ou tout
+            autre aspect de ma vie, n'hésitez pas à me contacter. Je suis ravi de faire partie de cette réunion et
+            d'apprendre à vous connaître tous.
+        </p>
+    </div>
+
+
+
+
+
+    <!-- Votre section "Portfolio" ici -->
     </section>
     <section id="contact" class="contact-section">
         <!-- Formulaire de contact PHP ici -->
@@ -53,8 +105,65 @@
             <input type="submit" value="Envoyer" class="form-submit-button">
         </form>
     </section>
+    <script>
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
+    <script src="SCRIPT/scriptDate.js"></script>
+    <script src="SCRIPT/script.js"></script>
+    <script src="SCRIPT/scriptMonterHaut.js"></script>
+    <script src="SCRIPT/scriptMenu.js"></script>
+
+
+
 </body>
+
 <footer>
-    <p>&copy; 2023 Benito NELSON - Tous droits réservés.</p>
+    <!-- Ajoutez ceci à l'endroit où vous voulez afficher la flèche -->
+    <button id="backToTopBtn" title="Retour en haut">&#9650;</button>
+
+
+    <!-- Ajoutez ici le contenu du pied de page -->
+
+    <!-- Icône Whatsapp -->
+    <a href="https://web.whatsapp.com/" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Icône Facebook -->
+    <a href="https://web.facebook.com/?locale=fr_FR&_rdc=1&_rdr" target="_blank">
+        <i class="fab fa-facebook"></i>
+    </a>
+
+    <!-- Icône Twitter -->
+    <a href="https://twitter.com/home" target="_blank">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+    <!-- Icône Email -->
+    <a href="mailto:elconquistadorbaoulyn@email.com,nelsonbaouly@gmail.com,nelsonbenito97@gmail.com" target="_blank">
+        <i class="fas fa-envelope"></i>
+    </a>
+
+
+    <!-- Icône Instagram -->
+    <a href="https://www.instagram.com/" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
+
+    <!-- Icône Telegram -->
+    <a href="https://web.telegram.org/a/" target="_blank">
+        <i class="fab fa-telegram"></i>
+    </a>
+
+    <!-- Icône YouTube -->
+    <a href="https://www.youtube.com/" target="_blank">
+        <i class="fab fa-youtube"></i>
+    </a>
+
+    <p>Tel: 44521822 / 47403551</p>
+    <p>Zone: Pelerin, commune de Pétion-Ville, Ouest, Haïti</p>
+    <p id="copyright">&copy; <span id="current-year"></span> Baouly NELSON inc. Tous droits réservés.</p>
+
 </footer>
+
 </html>

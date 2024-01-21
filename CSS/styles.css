@@ -1,0 +1,165 @@
+ /* styles.css */
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Cela assure que la hauteur du contenu est au moins égale à la hauteur de la fenêtre. */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    /* Ajustez la taille de votre logo */
+}
+/* Ajoutez ce code à votre feuille de style CSS */
+.image-container {
+    text-align: center;
+}
+
+.top-left-image {
+    max-width: 100%; /* Rend l'image responsive */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centre l'image horizontalement */
+}
+
+
+.search-container {
+    display: none; /* Caché initialement */
+    position: absolute;
+    top: 20px; /* Ajustez selon votre design */
+    right: 5px; /* Ajustez la distance par rapport à la droite */
+    text-align: center;
+    background-color: #333;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    align-items: center; /* Centre les éléments verticalement */
+    justify-content: center; /* Centre les éléments horizontalement */
+
+    
+}
+
+.search-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Ajustez la hauteur en fonction de vos besoins */
+}
+
+.search-icon i {
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px; /* Ajustez la taille en fonction de vos besoins */
+
+}
+
+
+.search-container input {
+    width: 50%; /* Ajustez la largeur de la barre de recherche */
+    padding: 8px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 3px;
+}
+
+.search-container i {
+    cursor: pointer;
+}
+
+
+.search-container {
+    display: none;
+    
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    font-size: 16px;
+}
+
+main {
+    flex: 1;
+    /* Utilisez flex-grow: 1 pour que le contenu occupe tout l'espace disponible. */
+    padding: 20px;
+}
+
+
+.menu-list {
+    display: none; /* Caché initialement */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #333;
+    position: absolute;
+    top: 60px; /* Ajustez selon votre design */
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.menu-list li {
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+}
+
+.menu-list a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.about-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: justify;
+    background-color: #f2f2f2; /* Nouvelle propriété pour la couleur de fond gris clair */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-paragraph {
+    margin-bottom: 15px; /* Ajusté la marge en bas pour correspondre à la nouvelle valeur */
+}
+
+/* Ajouter les styles pour la couleur et l'animation du titre */
+.text-container {
+    max-width: 600px; /* Limite la largeur à 600 pixels */
+    margin: 0 auto; /* Centre horizontalement */
+    text-align: justify; /* Justifie le texte à l'intérieur */
+    color: red; /* Changer la couleur du texte à rouge */
+    white-space: nowrap; /* Empêche le retour à la ligne pour l'effet de lettre par lettre */
+}
+
+/* Ajouter l'animation pour le délai d'apparition de chaque lettre */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Appliquer l'animation au titre */
+.section-title {
+    animation: fadeIn 1.5s ease-in-out, appear 0.5s steps(1, end); /* Ajouter l'animation de fondu et de délai d'apparition de lettre */
+}
+
+@keyframes appear {
+    from {
+        width: 0;
+    }
+}
+

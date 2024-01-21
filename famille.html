@@ -5,70 +5,134 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Membre de la famille</title>
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <header>
-        <h1 class="header-title">Benito NELSON - Portefeuille</h1>
-    </header>
-    <img src="bnito.jpg" class="top-left-image" alt="Image d'accueil">
-    <nav>
-        <ul class="nav-list">
-            <li><a href="index.html"><h3> retour sur accueil</h3></a></li>
-            <li><a href="famille.html"><h3>famille </h3></a></li>
-            <li><a href="contact.html"><h3>retour sur contact </h3></a></li>
-        </ul>
-    </nav>
-    <style>
-        body {
-            background-color: #f0f0f0; /* Couleur de fond */
-            font-family: Arial, sans-serif;
-            text-align: center; /* Centre le texte dans le corps de la page */
-            margin: 0;
-            padding: 0;
-        }
-
-        .family-section {
-            display: block; /* Pour afficher la section famille */
-            max-width: 800px; /* Largeur maximale de la section */
-            margin: 0 auto; /* Centre la section sur la page */
-            padding: 20px;
-            background-color: #70c219; /* Couleur de fond de la section */
-            border-radius: 10px; /* Coins arrondis */
-        }
-
-        h1 {
-            color: #333; /* Couleur du titre "Familles" */
-        }
-
-        h3 {
-            color: #555; /* Couleur des sous-titres Pere, Mere, etc. */
-        }
-
-        li {
-            list-style-type: none; /* Supprime les puces de la liste */
-            color: #777; /* Couleur du texte de la liste */
-        }
-    </style>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/stylesFamille.css">
+    <link rel="stylesheet" href="CSS/stylesFooter.css">
+    <link rel="stylesheet" href="CSS/stylesMenuFamille.css">
+    <link rel="stylesheet" href="CSS/stylesDate.css">
+    <link rel="stylesheet" href="CSS/stylesMonterHaut.css">
+    <link rel="stylesheet" href="CSS/menu.css">
+    <script src="https://kit.fontawesome.com/4675b5c56a.js" crossorigin="anonymous"></script>
 </head>
+
+<header>
+    <div class="logo">
+        <img src="IMAGES/baouly.jpg" alt="Logo du site">
+    </div>
+    <div class="menu-container">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    
+        <div class="menu-links">
+            <a href="index.html" onclick="showContent('index.html')">Accueil</a>
+            <a href="famille.html" onclick="showContent('famille.html')">Famille</a>
+            <a href="contact.html" onclick="showContent('contact.html')">Contact</a>
+        </div>
+    </div>
+    
+    <div class="search-icon" onclick="toggleSearch()">
+        <i class="fas fa-search"></i>
+    </div>
+    
+    <div class="search-container" id="search-container">
+        <input type="text" placeholder="&#128269;">
+        <i class="fas fa-times" onclick="toggleSearch()"></i>
+    </div>
+
+
+  
+</header>
 <body>
-<section id="Famille" class="family-section">
-    <h2 class="section-title">Ma Famille</h2>
-    <!-- Contenu de la page de la famille (photos, noms, etc.) -->
-</section>
-    <h1>Familles</h1>
-    <h3>Père</h3>
-    <p><li>Arius NELSON</li></p>
-    <h3>Mère</h3>
-    <p><li>Mauselaine Dominique</li></p>
-    <h3>Frères et sœurs</h3>
-    <ol>
-    <p><li>Andrelique NELSON</li></p>
-    <p><li>Mimose NELSON</li></p>
-    <p><li>Ariselaine NELSON</li></p>
-    <p><li>Sonia NELSON</li></p>
-    <p><li>Anna NELSON</li></p>
-</ol>
+    <!-- Ajoutez cette balise div autour de votre image -->
+<div class="image-container">
+    <img src="IMAGES/baouly.jpg" class="top-left-image" alt="Image d'accueil">
+</div>
+
+    <section id="Famille" class="family-section">
+        <h2 class="section-title">Ma Famille</h2>
+        <!-- Contenu de la page de la famille (photos, noms, etc.) -->
+        
+        <h3>Père</h3>
+        <p>Arius NELSON</p>
+        
+        <h3>Mère</h3>
+        <p>Mauselaine Dominique</p>
+        
+        <h3>Frères et sœurs</h3>
+        <ol>
+            <li>Andrelique NELSON</li>
+            <li>Mimose NELSON</li>
+            <li>Ariselaine NELSON</li>
+            <li>Sonia NELSON</li>
+            <li>Anna NELSON</li>
+        </ol>
+        
+    </section>
+    
+<script>
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+  </script>
+  <script src="SCRIPT/scriptDate.js"></script>
+  <script src="SCRIPT/script.js"></script>
+  <script src="SCRIPT/scriptMonterHaut.js"></script>
+  <script src="SCRIPT/scriptRecherche.js"></script>
+  <script src="SCRIPT/scriptMenu.js"></script>
+
+
+
+
+
+  
 </body>
 <footer>
-    <p>&copy; 2023 Benito NELSON - Tous droits réservés.</p>
+      <!-- Ajoutez ceci à l'endroit où vous voulez afficher la flèche -->
+<button id="backToTopBtn" title="Retour en haut">&#9650;</button>
+      <!-- Ajoutez ici le contenu du pied de page -->
+    <!-- Icône Facebook -->
+
+    <!-- Icône Whatsapp -->
+    <a href="https://web.whatsapp.com/" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a href="https://web.facebook.com/?locale=fr_FR&_rdc=1&_rdr" target="_blank">
+        <i class="fab fa-facebook"></i>
+    </a>
+
+    <!-- Icône Twitter -->
+    <a href="https://twitter.com/home" target="_blank">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+    <!-- Icône Email -->
+    <a href="mailto:elconquistadorbaoulyn@email.com,nelsonbaouly@gmail.com,nelsonbenito97@gmail.com"
+        target="_blank">
+        <i class="fas fa-envelope"></i>
+    </a>
+
+
+    <!-- Icône Instagram -->
+    <a href="https://www.instagram.com/" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
+
+    <!-- Icône Telegram -->
+    <a href="https://web.telegram.org/a/" target="_blank">
+        <i class="fab fa-telegram"></i>
+    </a>
+
+    <!-- Icône YouTube -->
+    <a href="https://www.youtube.com/" target="_blank">
+        <i class="fab fa-youtube"></i>
+    </a>
+
+    <p>Tel: 44521822 / 47403551</p>
+    <p>Zone: Pelerin, commune de Pétion-Ville, Ouest, Haïti</p>
+    <p id="copyright">&copy; <span id="current-year"></span> Baouly NELSON inc. Tous droits réservés.</p>
+
+   
 </footer>
 </html>
