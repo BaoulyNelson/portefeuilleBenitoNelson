@@ -40,3 +40,41 @@ function clearMenu() {
     // Rétablir l'état initial du bouton de menu
     toggleMenu();
 }
+
+// navigation.js
+
+var pages = ["index.html", "accueil.html", "famille.html", "contact.html"];
+var currentPageIndex = 0;
+
+function pagePrecedente() {
+    if (currentPageIndex > 0) {
+        currentPageIndex--;
+        navigateToCurrentPage();
+    }
+}
+
+function pageSuivante() {
+    if (currentPageIndex < pages.length - 1) {
+        currentPageIndex++;
+        navigateToCurrentPage();
+    }
+}
+
+function navigateToCurrentPage() {
+    var page = pages[currentPageIndex];
+    showContent(page);
+}
+
+function showContent(page) {
+    // Charger le contenu de la page spécifiée
+    fetch(page)
+        .then(response => response.text())
+        .then(html => {
+            // Mettre à jour le contenu de la page principale avec le contenu de la page chargée
+            document.querySelector('body').innerHTML = html;
+        })
+        .catch(error => console.error('Erreur lors du chargement de la page :', error));
+}
+
+
+

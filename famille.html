@@ -32,10 +32,12 @@
         </div>
     
         <div class="menu-links">
+         
             <a href="index.html" onclick="showContent('index.html')">Accueil</a>
+            <a href="accueil.html" onclick="showContent('accueil.html')">A Propos de Moi</a>
             <a href="famille.html" onclick="showContent('famille.html')">Famille</a>
             <a href="contact.html" onclick="showContent('contact.html')">Contact</a>
-            
+        
         </div>
     </div>
     <div class="header">
@@ -95,11 +97,10 @@
 
 </body>
 <footer>
-    
-    <div class="navigation-buttons">
-        <button class="prev-button" onclick="showPreviousContent()"><i class="fas fa-chevron-left"></i> Précédent</button>
-        <button class="next-button" onclick="showNextContent()">Suivant <i class="fas fa-chevron-right"></i></button>
-    </div>
+  <!-- Boutons de navigation -->
+  <button onclick="pagePrecedente()" class="navigation-button left">Précédent</button>
+  <button onclick="pageSuivante()" class="navigation-button right">Suivant</button>
+
       <!-- Ajoutez ceci à l'endroit où vous voulez afficher la flèche -->
 <button id="backToTopBtn" title="Retour en haut">&#9650;</button>
       <!-- Ajoutez ici le contenu du pied de page -->

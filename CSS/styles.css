@@ -203,3 +203,20 @@ main {
     color: red; /* Couleur des autres titres */
 }
 
+.navigation-button {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .left {
+    left: 0;
+  }
+  
+  .right {
+    right: 0;
+  }
+
