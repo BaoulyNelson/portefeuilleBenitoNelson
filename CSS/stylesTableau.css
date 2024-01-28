@@ -1,0 +1,55 @@
+   /* Centre le tableau */
+   .family-section {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+/* Applique une couleur de fond au tableau */
+.family-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #f5f5f5; /* Changez cette couleur selon vos préférences */
+}
+
+/* Styles pour le titre de la section */
+.section-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Styles pour les en-têtes du tableau */
+.family-table th {
+    background-color: #227;
+
+    padding: 10px;
+    border: 1px solid #227;
+}
+
+/* Styles pour les cellules du tableau */
+.family-table td {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+/* Styles spécifiques pour la colonne des noms */
+.family-table td ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.family-table td ul li {
+    margin-bottom: 5px;
+}
+
+/* Styles pour la première colonne (Rôle) */
+.family-table td:first-child {
+    font-weight: bold;
+}
+
+/* Styles pour les lignes impaires du tableau */
+.family-table tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}

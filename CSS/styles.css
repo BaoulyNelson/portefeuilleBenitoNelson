@@ -1,222 +1,275 @@
  /* styles.css */
  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    /* Cela assure que la hauteur du contenu est au moins égale à la hauteur de la fenêtre. */
-    
-}
+     font-family: Arial, sans-serif;
+     margin: 0;
+     padding: 0;
+     display: flex;
+     flex-direction: column;
+     min-height: 100vh;
+     font-size: 20px;
 
-.wrapper {
-    flex: 1;
-}
+     /* Cela assure que la hauteur du contenu est au moins égale à la hauteur de la fenêtre. */
 
+ }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo img {
-    width: 50px;
-    /* Ajustez la taille de votre logo */
-}
-/* Ajoutez ce code à votre feuille de style CSS */
-.image-container {
-    text-align: center;
-}
-
-.top-left-image {
-    max-width: 100%; /* Rend l'image responsive */
-    height: auto;
-    display: block;
-    margin: 0 auto; /* Centre l'image horizontalement */
-}
+ .wrapper {
+     flex: 1;
+ }
 
 
-.search-container {
-    display: none; /* Caché initialement */
-    position: absolute;
-    top: 20px; /* Ajustez selon votre design */
-    right: 5px; /* Ajustez la distance par rapport à la droite */
-    text-align: center;
-    background-color: #333;
-    padding: 5px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    align-items: center; /* Centre les éléments verticalement */
-    justify-content: center; /* Centre les éléments horizontalement */
+ header {
+     background-color: #333;
+     color: #fff;
+     padding: 10px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
 
-    
-}
+ .logo img {
+     width: 50px;
+     /* Ajustez la taille de votre logo */
+ }
 
-.search-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%; /* Ajustez la hauteur en fonction de vos besoins */
-}
+ /* Ajoutez ce code à votre feuille de style CSS */
+ .image-container {
+     text-align: center;
+ }
 
-.search-icon i {
-    color: #fff;
-    cursor: pointer;
-    font-size: 20px; /* Ajustez la taille en fonction de vos besoins */
-
-}
+ .top-left-image {
+     max-width: 100%;
+     /* Rend l'image responsive */
+     height: auto;
+     display: block;
+     margin: 0 auto;
+     /* Centre l'image horizontalement */
+ }
 
 
-.search-container input {
-    width: 50%; /* Ajustez la largeur de la barre de recherche */
-    padding: 8px;
-    margin-right: 5px;
-    border: none;
-    border-radius: 3px;
-}
-
-.search-container i {
-    cursor: pointer;
-}
-
-
-.search-container {
-    display: none;
-    
-}
-
-p, h1, h2, h3, h4, h5, h6 {
-    font-size: 16px;
-}
-
-main {
-    flex: 1;
-    /* Utilisez flex-grow: 1 pour que le contenu occupe tout l'espace disponible. */
-    padding: 20px;
-}
+ .search-container {
+     display: none;
+     /* Caché initialement */
+     position: absolute;
+     top: 20px;
+     /* Ajustez selon votre design */
+     right: 5px;
+     /* Ajustez la distance par rapport à la droite */
+     text-align: center;
+     background-color: #333;
+     padding: 5px;
+     border-radius: 10px;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+     align-items: center;
+     /* Centre les éléments verticalement */
+     justify-content: center;
+     /* Centre les éléments horizontalement */
 
 
-.menu-list {
-    display: none; /* Caché initialement */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background-color: #333;
-    position: absolute;
-    top: 60px; /* Ajustez selon votre design */
-    left: 0;
-    width: 100%;
-    text-align: center;
-}
+ }
 
-.menu-list li {
-    padding: 10px;
-    border-bottom: 1px solid #fff;
-}
+ .search-icon {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100%;
+     /* Ajustez la hauteur en fonction de vos besoins */
+ }
 
-.menu-list a {
-    color: #fff;
-    text-decoration: none;
-}
+ .search-icon i {
+     color: #fff;
+     cursor: pointer;
+     font-size: 20px;
+     /* Ajustez la taille en fonction de vos besoins */
+
+ }
 
 
-.about-container {
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: justify;
-    background-color: #227dea; /* Nouvelle propriété pour la couleur de fond gris clair */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+ .search-container input {
+     width: 50%;
+     /* Ajustez la largeur de la barre de recherche */
+     padding: 8px;
+     margin-right: 5px;
+     border: none;
+     border-radius: 3px;
+ }
 
-.about-paragraph {
-    margin-bottom: 15px; /* Ajusté la marge en bas pour correspondre à la nouvelle valeur */
-}
-
-/* Ajouter les styles pour la couleur et l'animation du titre */
-.text-container {
-    max-width: 500px; /* Limite la largeur à 600 pixels */
-    margin: 0 auto; /* Centre horizontalement */
-    color: red; /* Changer la couleur du texte à rouge */
-    white-space: nowrap; /* Empêche le retour à la ligne pour l'effet de lettre par lettre */
-    text-align: center; /* Centre horizontalement */
-    display: flex; /* Permet une disposition flexbox */
-    align-items: center; /* Centre verticalement */
-    justify-content: center; /* Centre horizontalement (si nécessaire) */
-   
-}
-
-/* Ajouter l'animation pour le délai d'apparition de chaque lettre */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Appliquer l'animation au titre */
-.section-title,.sous-titre {
-    animation: fadeIn 1.5s ease-in-out, appear 0.5s steps(1, end); /* Ajouter l'animation de fondu et de délai d'apparition de lettre */
-}
-
-@keyframes appear {
-    from {
-        width: 0;
-    }
-}
+ .search-container i {
+     cursor: pointer;
+ }
 
 
-.services-list {
-    display: flex;
-    justify-content: space-between; /* Ajustez selon vos besoins */
-    flex-wrap: wrap; /* Permet à vos éléments de passer à la ligne si l'espace est insuffisant */
-}
+ .search-container {
+     display: none;
 
-.service-item {
-    background-color: aqua;
-    width: 30%; /* Ajustez selon vos besoins */
-    margin-bottom: 0px; /* Espacement entre les éléments */
-    box-sizing: border-box;
-    padding: 5px;
-    max-width: 200px; /* Ajustez la largeur maximale selon vos besoins */
-    border: 2px solid #227; /* Ajoute une bordure grise autour de chaque bloc */
+ }
 
-}
 
-.container {
-    text-align: center; /* Centre le texte à l'intérieur du conteneur */
-}
+ /* Style pour centrer la div contenant l'iframe */
+ .centered {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     max-width: 500px;
+     /* Largeur maximale de l'iframe */
+     margin: 0 auto;
+     /* Centre horizontalement */
 
-.sous-titre {
-    color: black; /* Couleur du titre "Services" */
-}
+ }
 
-.service-item h2 {
-    color: red; /* Couleur des autres titres */
-}
 
-.navigation-button {
+ main {
+     flex: 1;
+     /* Utilisez flex-grow: 1 pour que le contenu occupe tout l'espace disponible. */
+     padding: 20px;
+ }
+
+
+ .menu-list {
+     display: none;
+     /* Caché initialement */
+     list-style: none;
+     padding: 0;
+     margin: 0;
+     background-color: #333;
+     position: absolute;
+     top: 60px;
+     /* Ajustez selon votre design */
+     left: 0;
+     width: 100%;
+     text-align: center;
+ }
+
+ .menu-list li {
+     padding: 10px;
+     border-bottom: 1px solid #fff;
+ }
+
+ .menu-list a {
+     color: #fff;
+     text-decoration: none;
+ }
+
+
+ .about-container {
+     max-width: 500px;
+     margin: 0 auto;
+     text-align: justify;
+     background-color: #227dea;
+     /* Nouvelle propriété pour la couleur de fond gris clair */
+     padding: 20px;
+     border-radius: 10px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ }
+
+ .about-paragraph {
+     margin-bottom: 15px;
+     /* Ajusté la marge en bas pour correspondre à la nouvelle valeur */
+ }
+
+ /* Ajouter les styles pour la couleur et l'animation du titre */
+ .text-container {
+     max-width: 500px;
+     /* Limite la largeur à 600 pixels */
+     margin: 0 auto;
+     /* Centre horizontalement */
+     color: red;
+     /* Changer la couleur du texte à rouge */
+     white-space: nowrap;
+     /* Empêche le retour à la ligne pour l'effet de lettre par lettre */
+     text-align: center;
+     /* Centre horizontalement */
+     display: flex;
+     /* Permet une disposition flexbox */
+     align-items: center;
+     /* Centre verticalement */
+     justify-content: center;
+     /* Centre horizontalement (si nécessaire) */
+
+ }
+
+ /* Ajouter l'animation pour le délai d'apparition de chaque lettre */
+ @keyframes fadeIn {
+     from {
+         opacity: 0;
+     }
+
+     to {
+         opacity: 1;
+     }
+ }
+
+ /* Appliquer l'animation au titre */
+ .section-title,
+ .sous-titre {
+     animation: fadeIn 1.5s ease-in-out, appear 0.5s steps(1, end);
+     /* Ajouter l'animation de fondu et de délai d'apparition de lettre */
+ }
+
+ @keyframes appear {
+     from {
+         width: 0;
+     }
+ }
+
+
+ .services-list {
+     display: flex;
+     justify-content: space-between;
+     /* Ajustez selon vos besoins */
+     flex-wrap: wrap;
+     /* Permet à vos éléments de passer à la ligne si l'espace est insuffisant */
+ }
+
+ .service-item {
+     background-color: aqua;
+     width: 30%;
+     /* Ajustez selon vos besoins */
+     margin-bottom: 0px;
+     /* Espacement entre les éléments */
+     box-sizing: border-box;
+     padding: 5px;
+     max-width: 200px;
+     /* Ajustez la largeur maximale selon vos besoins */
+     border: 2px solid #227;
+     /* Ajoute une bordure grise autour de chaque bloc */
+
+ }
+
+ .container {
+     text-align: center;
+     /* Centre le texte à l'intérieur du conteneur */
+ }
+
+ .sous-titre {
+     color: black;
+     /* Couleur du titre "Services" */
+ }
+
+ .service-item h2 {
+     color: red;
+     /* Couleur des autres titres */
+ }
+
+   /* Styles pour les boutons de navigation */
+   .navigation-button {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
     font-size: 16px;
     padding: 10px;
     cursor: pointer;
-  }
-  
-  .left {
-    left: 0;
-  }
-  
-  .right {
-    right: 0;
-  }
+}
 
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+/* Style pour centrer horizontalement les boutons */
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}

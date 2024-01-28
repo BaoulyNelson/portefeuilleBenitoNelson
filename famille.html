@@ -6,18 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Membre de la famille</title>
     <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="stylesheet" href="CSS/stylesFamille.css">
-    <link rel="stylesheet" href="CSS/stylesFooter.css">
-    <link rel="stylesheet" href="CSS/stylesMenuFamille.css">
-    <link rel="stylesheet" href="CSS/stylesDate.css">
     <link rel="stylesheet" href="CSS/stylesMonterHaut.css">
+    <link rel="stylesheet" href="CSS/stylesFormulaire.css">
+    <link rel="stylesheet" href="CSS/stylesFooter.css">
+    <link rel="stylesheet" href="CSS/stylesDate.css">
     <link rel="stylesheet" href="CSS/menu.css">
     <link rel="stylesheet" href="CSS/stylesRecherche.css">
+    <link rel="stylesheet" href="CSS/stylesTableau.css">
+
+    <style>
+        .search-icon-container {
+          float: right; /* ou text-align: right; */
+        }
+         /* Style pour cacher initialement le champ de recherche */
+         .search-input {
+          display: none;
+      }
+      </style>
 
 <!-- Assurez-vous d'inclure la bibliothèque Font Awesome dans votre fichier HTML -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-GLhlTQ8iKStXZ5l/Afbno3PKYUD4qzpo5F8+YR5FZtAtUHzq4Ux4bUDxpxI3Wr2Q" crossorigin="anonymous">
-
     <script src="https://kit.fontawesome.com/4675b5c56a.js" crossorigin="anonymous"></script>
+
 </head>
 
 <header>
@@ -25,34 +35,43 @@
         <img src="IMAGES/baouly.jpg" alt="Logo du site">
     </div>
     <div class="menu-container">
-        <div class="menu-icon" onclick="toggleMenu()">
+        <div class="menu-icon" id="menu" onclick="toggleMenu()">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
     
         <div class="menu-links">
-         
-            <a href="index.html" onclick="showContent('index.html')">Accueil</a>
-            <a href="accueil.html" onclick="showContent('accueil.html')">A Propos de Moi</a>
-            <a href="famille.html" onclick="showContent('famille.html')">Famille</a>
-            <a href="contact.html" onclick="showContent('contact.html')">Contact</a>
-        
+            <a href="accueil.html" onclick="showContent('accueil.html')"><i class="fas fa-home"></i> Accueil</a>
+            <a href="index.html" onclick="showContent('index.html')"><i class="fas fa-book"></i> À propos</a>
+            <a href="famille.html" onclick="showContent('famille.html')"><i class="fas fa-users"></i> Famille</a>
+            <a href="contact.html" onclick="showContent('contact.html')"><i class="fas fa-user"></i> Contact</a>
+
         </div>
     </div>
     <div class="header">
         <p id="current-time"></p>
     </div>
-    <div class="search-icon" onclick="toggleSearch()">
-        <i class="fas fa-search"></i>
-    </div>
     
-    <div class="search-container" id="search-container">
-        <input type="text" placeholder="&#128269;">
-        <i class="fas fa-times" onclick="toggleSearch()"></i>
-    </div>
-
+    <!-- Icône de recherche avec champ de saisie -->
+    <a href="#" class="search-icon-container" onclick="toggleSearch()">
+        <i class="fas fa-search"></i>
+    </a>
+    <!-- Champ de saisie de recherche -->
+    <input type="text" class="search-input" id="searchInput" placeholder="Entrez votre recherche ici...">
+    
 </header>
+  <!-- Exemples d'utilisation des icônes comme liens -->
+  <!-- <ul>
+    <li><a href="#"><i class="fas fa-home"></i> Accueil</a></li>
+    <li><a href="#"><i class="fas fa-users"></i> Membres</a></li>
+    <li><a href="#"><i class="fas fa-user"></i> Profil</a></li>
+    <li><a href="#"><i class="fas fa-search"></i> Recherche</a></li>
+    <li><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
+    <li><a href="#"><i class="fas fa-plus"></i> Plus</a></li>
+    <li><a href="#"><i class="fas fa-plus-circle"></i> Ajouter</a></li>
+    <li><a href="#"><i class="fas fa-minus-circle"></i> Supprimer</a></li>
+</ul> -->
 <body>
     
 <div class="wrapper">
@@ -63,27 +82,36 @@
     <img src="IMAGES/baouly.jpg" class="top-left-image" alt="Image d'accueil">
 </div>
 
-    <section id="Famille" class="family-section">
-        <h2 class="section-title">Ma Famille</h2>
-        <!-- Contenu de la page de la famille (photos, noms, etc.) -->
-        
-        <h3>Père</h3>
-        <p>Arius NELSON</p>
-        
-        <h3>Mère</h3>
-        <p>Mauselaine Dominique</p>
-        
-        <h3>Frères et sœurs</h3>
-        <ol>
-            <li>Andrelique NELSON</li>
-            <li>Mimose NELSON</li>
-            <li>Ariselaine NELSON</li>
-            <li>Sonia NELSON</li>
-            <li>Anna NELSON</li>
-        </ol>
-        
-    </section>
-    
+<section id="Famille" class="family-section">
+    <table class="family-table">
+        <caption class="section-title">Ma Famille</caption>
+        <tr>
+            <th>Rôle</th>
+            <th>Nom</th>
+        </tr>
+        <tr>
+            <td>Père</td>
+            <td>Arius NELSON</td>
+        </tr>
+        <tr>
+            <td>Mère</td>
+            <td>Mauselaine Dominique</td>
+        </tr>
+        <tr>
+            <td>Frères et sœurs</td>
+            <td>
+                <ul>
+                    <li>Andrelique NELSON</li>
+                    <li>Mimose NELSON</li>
+                    <li>Ariselaine NELSON</li>
+                    <li>Sonia NELSON</li>
+                    <li>Anna NELSON</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</section>
+
 
   <script src="SCRIPT/scriptDate.js"></script>
   <script src="SCRIPT/script.js"></script>
@@ -97,10 +125,11 @@
 
 </body>
 <footer>
-  <!-- Boutons de navigation -->
-  <button onclick="pagePrecedente()" class="navigation-button left">Précédent</button>
-  <button onclick="pageSuivante()" class="navigation-button right">Suivant</button>
-
+<!-- Boutons de navigation -->
+<div class="button-container">
+    <button onclick="pagePrecedente()" class="navigation-button left">Précédent</button>
+    <button onclick="pageSuivante()" class="navigation-button right">Suivant</button>
+</div>
       <!-- Ajoutez ceci à l'endroit où vous voulez afficher la flèche -->
 <button id="backToTopBtn" title="Retour en haut">&#9650;</button>
       <!-- Ajoutez ici le contenu du pied de page -->
