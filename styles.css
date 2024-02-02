@@ -68,21 +68,12 @@ main {
     padding-top: 70px;
 }
 
-section {
-    margin-bottom: 30px;
-    position: relative;
-}
 
 .accueil-section {
-    background-image: url('background.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
     text-align: center;
-    color: #fff;
+    padding: 100px 0; /* Ajustez l'espacement vertical selon vos besoins */
+    color: #fff; /* Couleur du texte */
 }
 
 .overlay {
@@ -91,21 +82,66 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Couleur de l'overlay */
 }
 
 .accueil-content {
+    position: relative;
     z-index: 1;
 }
 
-.accueil-content h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+.accueil-content h2,
+.accueil-content p,
+.accueil-content .btn {
+    margin-bottom: 20px; /* Espacement entre les éléments */
 }
 
-.accueil-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+/* Animation pour les éléments de contenu */
+.animate__animated {
+    animation-duration: 1s;
+}
+
+.animate__fadeInDown {
+    animation-name: fadeInDown;
+}
+
+.animate__fadeInUp {
+    animation-name: fadeInUp;
+}
+
+.animate__fadeIn {
+    animation-name: fadeIn;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .btn {
@@ -121,6 +157,94 @@ section {
 .btn:hover {
     background-color: #ff6347;
 }
+
+.contact-form {
+    margin-top: 20px;
+}
+
+.contact-form form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form form input[type="text"],
+.contact-form form input[type="email"],
+.contact-form form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.contact-form form textarea {
+    resize: vertical;
+}
+
+.contact-form form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact-form form button:hover {
+    background-color: #0056b3;
+}
+
+section {
+    padding: 50px 0; /* Ajoutez un espacement autour du contenu */
+    text-align: center; /* Centre le texte à l'intérieur de la section */
+    max-width: 800px; /* Définissez la largeur maximale de votre contenu, ajustez selon vos besoins */
+    margin: 0 auto; /* Centre la section horizontalement */
+    }
+
+    section p {
+        max-width: 500px; /* Limite la largeur des paragraphes à 500 pixels */
+        margin: 0 auto; /* Centre les paragraphes horizontalement s'ils sont plus courts que 500px */
+    }
+.container {
+    max-width: 800px; /* Définissez une largeur maximale pour le contenu */
+    margin: 0 auto; /* Centrez horizontalement le contenu dans la section */
+}
+
+h2 {
+    margin-bottom: 20px; /* Ajoutez un espace sous le titre */
+}
+
+/* Animation pour les titres */
+.animate__animated {
+    animation-duration: 1s;
+}
+
+.animate__fadeInDown {
+    animation-name: fadeInDown;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 footer {
     background-color: #333;

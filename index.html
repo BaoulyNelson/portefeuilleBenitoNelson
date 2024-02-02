@@ -34,26 +34,73 @@
     <section id="accueil" class="accueil-section">
         <div class="overlay"></div>
         <div class="accueil-content">
-            <h2>Bienvenue sur mon Portefolio</h2>
-            <p>Découvrez mes réalisations et mon parcours professionnel.</p>
-            <a href="#projets" class="btn">Voir mes projets</a>
+            <h2 class="animate__animated animate__fadeInDown">Bienvenue sur mon Portefolio</h2>
+            <p class="animate__animated animate__fadeInUp">Découvrez mes réalisations et mon parcours professionnel.</p>
+            <a href="#projets" class="btn animate__animated animate__fadeIn">Voir mes projets</a>
         </div>
     </section>
-
+    
     <section id="projets">
-        <h2>Projets</h2>
-        <!-- Contenu des projets -->
+        <h2>Mes Projets</h2>
+        <div class="projet">
+            <h3>Nom du Projet 1</h3>
+            <img src="projet1.jpg" alt="Capture d'écran du Projet 1">
+            <p>Description du Projet 1...</p>
+            <a href="lien_vers_projet1" target="_blank">Voir le Projet</a>
+        </div>
+        <div class="projet">
+            <h3>Nom du Projet 2</h3>
+            <img src="projet2.jpg" alt="Capture d'écran du Projet 2">
+            <p>Description du Projet 2...</p>
+            <a href="lien_vers_projet2" target="_blank">Voir le Projet</a>
+        </div>
+        <!-- Ajoutez d'autres projets selon vos besoins -->
     </section>
+    
 
     <section id="a-propos">
-        <h2>À propos</h2>
-        <!-- Informations sur vous -->
+        <h2>À propos de moi</h2>
+        <div class="about-me">
+            <img src="photo.jpg" alt="Photo de moi">
+            <div class="description">
+                <p>Bonjour ! Je suis [votre nom], un développeur web passionné basé à [votre ville].</p>
+                <p>J'ai une passion pour la création de sites web innovants et conviviaux qui offrent une expérience utilisateur exceptionnelle.</p>
+                <p>Mon parcours professionnel comprend [nombre] années d'expérience dans le développement web, travaillant sur une variété de projets pour des clients de divers secteurs.</p>
+                <p>Je suis compétent dans plusieurs langages de programmation et technologies web, notamment HTML, CSS, JavaScript, PHP et MySQL.</p>
+                <p>En dehors du développement web, j'aime [activités ou centres d'intérêt] et je suis toujours enthousiaste à l'idée d'apprendre de nouvelles choses et de relever de nouveaux défis.</p>
+            </div>
+        </div>
     </section>
+    
 
     <section id="contact">
-        <h2>Contact</h2>
-        <!-- Formulaire de contact ou informations de contact -->
+        <h2>Contactez-moi</h2>
+        <div class="contact-info">
+            <p>Vous pouvez me contacter par email ou via les réseaux sociaux :</p>
+            <ul>
+                <li><i class="fas fa-envelope"></i> <a href="mailto:votre@email.com">votre@email.com</a></li>
+                <li><i class="fab fa-twitter"></i> <a href="https://twitter.com/votrenom" target="_blank">Twitter</a></li>
+                <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/votrenom" target="_blank">LinkedIn</a></li>
+                <li><i class="fab fa-github"></i> <a href="https://github.com/votrenom" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+        <div class="contact-form">
+            <h3>Ou utilisez ce formulaire de contact :</h3>
+            <form action="traitement_form.php" method="post">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required>
+    
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+    
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
     </section>
+    
 </main>
 
 <footer>
