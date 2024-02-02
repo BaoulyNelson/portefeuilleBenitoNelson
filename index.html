@@ -1,268 +1,71 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portefeuille de Benito Nelson</title>
-    <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="stylesheet" href="CSS/stylesMonterHaut.css">
-    <link rel="stylesheet" href="CSS/stylesFormulaire.css">
-    <link rel="stylesheet" href="CSS/stylesFooter.css">
-    <link rel="stylesheet" href="CSS/stylesDate.css">
-    <link rel="stylesheet" href="CSS/menu.css">
-    <link rel="stylesheet" href="CSS/stylesRecherche.css">
-    <style>
-        .search-icon-container {
-          float: right; /* ou text-align: right; */
-        }
-         /* Style pour cacher initialement le champ de recherche */
-         .search-input {
-          display: none;
-      }
-      </style>
-    <!-- Assurez-vous d'inclure la bibliothèque Font Awesome dans votre fichier HTML -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha384-GLhlTQ8iKStXZ5l/Afbno3PKYUD4qzpo5F8+YR5FZtAtUHzq4Ux4bUDxpxI3Wr2Q" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/4675b5c56a.js" crossorigin="anonymous"></script>
- 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portefolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-ClHizqfgveHQ5L7ai+IFeu9tmzV3mVcDg15nElkFouGE6fP82kAlIks5stvRk9UK" crossorigin="anonymous">
+
 </head>
-
-<header>
-    <div class="logo">
-        <img src="IMAGES/baouly.jpg" alt="Logo du site">
-    </div>
-
-    <div class="menu-container">
-        <div class="menu-icon" id="menu" onclick="toggleMenu()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-
-        <div class="menu-links">
-            <a href="accueil.html" onclick="showContent('accueil.html')"><i class="fas fa-home"></i> Accueil</a>
-            <a href="index.html" onclick="showContent('index.html')"><i class="fas fa-book"></i> À propos</a>
-            <a href="famille.html" onclick="showContent('famille.html')"><i class="fas fa-users"></i> Famille</a>
-            <a href="contact.html" onclick="showContent('contact.html')"><i class="fas fa-user"></i> Contact</a>
-
-        </div>
-    </div>
-    <div class="header">
-        <p id="current-time"></p>
-    </div>
-
-    <div class="search-container" id="search-container">
-        <input type="text" placeholder="&#128269;">
-        <i class="fas fa-times" onclick="toggleSearch()"></i>
-
-    </div>
-   
-    <!-- Icône de recherche avec champ de saisie -->
-    <a href="#" class="search-icon-container" onclick="toggleSearch()">
-        <i class="fas fa-search"></i>
-    </a>
-    <!-- Champ de saisie de recherche -->
-    <input type="text" class="search-input" id="searchInput" placeholder="Entrez votre recherche ici...">
-    
-</header>
-<!-- Exemples d'utilisation des icônes comme liens -->
-<!-- <ul>
-    <li><a href="#"><i class="fas fa-home"></i> Accueil</a></li>
-    <li><a href="#"><i class="fas fa-users"></i> Membres</a></li>
-    <li><a href="#"><i class="fas fa-user"></i> Profil</a></li>
-    <li><a href="#"><i class="fas fa-search"></i> Recherche</a></li>
-    <li><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
-    <li><a href="#"><i class="fas fa-plus"></i> Plus</a></li>
-    <li><a href="#"><i class="fas fa-plus-circle"></i> Ajouter</a></li>
-    <li><a href="#"><i class="fas fa-minus-circle"></i> Supprimer</a></li>
-</ul> -->
-
 <body>
-    <div class="wrapper">
-        <div class="content">
 
-            <div class="content-section">
-                <h2 class="section-title text-container">À propos de moi</h2>
-
-                <div class="about-container">
-                    <p class="about-paragraph">
-                        Bonjour à tous, je m'appelle Benito Nelson, mais on me connaît souvent sous le surnom d'El
-                        Conquistador
-                        Baouly. Je suis originaire de Jacmel, en Haïti, et ma date de naissance est le 4 août 2000.
-                    </p>
-
-                    <p class="about-paragraph">
-                        J'ai suivi mes études primaires au Collège Bethesda Nossilherl Lherisson, puis j'ai poursuivi
-                        mon parcours
-                        académique à l'IDEPH (Institution du bon Pasteur) pour mes études secondaires. Actuellement, je
-                        suis diplômé
-                        de l'ESIH (École Supérieure d'Infotronique d'Haïti) en tant qu'informaticien.
-                    </p>
-
-                    <p class="about-paragraph">
-                        Sur le plan personnel, je suis célibataire et ma taille est de 1,60 m. Mon aspiration
-                        professionnelle est de
-                        devenir un analyste programmeur, et j'habite à Pelerin 5A, Haïti.
-                    </p>
-
-                    <p class="about-paragraph">
-                        Je suis passionné par l'informatique et je suis un humaniste dans l'âme. J'ai également une
-                        forte
-                        inclination pour la philanthropie et j'essaie toujours de contribuer à des projets bénéfiques
-                        pour la
-                        société.
-                    </p>
-
-                    <p class="about-paragraph">
-                        Si vous avez des questions ou si vous souhaitez en savoir plus sur mes compétences, expériences
-                        ou tout
-                        autre aspect de ma vie, n'hésitez pas à me contacter. Je suis ravi de faire partie de cette
-                        réunion et
-                        d'apprendre à vous connaître tous.
-                    </p>
-
-                    <p class="about-paragraph">
-                        En tant qu'étudiant passionné d'informatique, je me définis comme un explorateur du monde
-                        numérique. Ma fascination pour les dernières avancées technologiques m'a conduit à développer
-                        des compétences approfondies en programmation, notamment avec HTML, CSS et JavaScript.
-                    </p>
-
-                    <p class="about-paragraph">
-                        Mon champ d'expertise s'étend également à des domaines spécifiques tels que le développement sur
-                        Shopify et la création graphique avec Canva. Mon objectif ultime est de devenir indépendant en
-                        continuant d'acquérir des connaissances pointues.
-                    </p>
-
-                    <p class="about-paragraph">
-                        Au-delà du code, ma passion pour la création se traduit par ma capacité à concevoir des
-                        expériences utilisateur exceptionnelles. Mon engagement envers l'apprentissage continu définit
-                        ma vision en tant que professionnel de la technologie.
-                    </p>
-
-
-                </div>
-
-                <div id="service">
-                    <div class="container">
-                        <h1 class="sous-titre">Services</h1>
-                        <div class="services-list">
-                            <div class="service-item" data-aos='fade-right' data-aos-duration="1100">
-                                <i class="fa-solid fa-code"></i>
-                                <h2>Creation de Site Web</h2>
-                                <p>Je crée des sites web uniques et personnalisés en fonction des besoins et des
-                                    objectifs de mes clients. Chaque site est conçu avec une attention particulière aux
-                                    détails, à l'esthétique et à l'expérience utilisateur.</p>
-                            </div>
-
-                            <div class="service-item" data-aos='fade-right' data-aos-duration="1100">
-                                <i class="fa-solid fa-check"></i>
-                                <h2>Optimisation des Performances Web</h2>
-                                <p>Mon expertise réside dans l'optimisation des performances de votre présence en ligne.
-                                    Je m'engage à accélérer le chargement de vos pages web, à améliorer l'efficacité de
-                                    vos applications et à garantir une expérience utilisateur fluide.</p>
-                            </div>
-
-                            <div class="service-item" data-aos='fade-right' data-aos-duration="1100">
-                                <i class="fa-brands fa-app-store"></i>
-                                <h2>Creation d'Application Mobile</h2>
-                                <p>Je crée des applications mobiles personnalisées pour les plateformes Android et iOS.
-                                    En travaillant en étroite collaboration avec vous, je transforme vos idées en
-                                    applications mobiles fonctionnelles et esthétiques.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Votre section "Portfolio" ici -->
-                </section>
-            
-            </div>
-
-
-            <script src="SCRIPT/scriptDate.js"></script>
-            <script src="SCRIPT/script.js"></script>
-            <script src="SCRIPT/scriptMonterHaut.js"></script>
-            <script src="SCRIPT/scriptMenu.js"></script>
-            <script src="SCRIPT/scriptRecherche.js"></script>
-
+    <header>
+        <div class="logo">
+            <h1>Mon Portefolio</h1>
         </div>
-    </div>
+    
+        <nav id="menu">
+            <ul>
+                <li><a href="#accueil"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="#projets"><i class="fas fa-project-diagram"></i> Projets</a></li>
+                <li><a href="#a-propos"><i class="fas fa-user"></i> À propos</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+    
 
-</body>
+<main>
+    <section id="accueil" class="accueil-section">
+        <div class="overlay"></div>
+        <div class="accueil-content">
+            <h2>Bienvenue sur mon Portefolio</h2>
+            <p>Découvrez mes réalisations et mon parcours professionnel.</p>
+            <a href="#projets" class="btn">Voir mes projets</a>
+        </div>
+    </section>
+
+    <section id="projets">
+        <h2>Projets</h2>
+        <!-- Contenu des projets -->
+    </section>
+
+    <section id="a-propos">
+        <h2>À propos</h2>
+        <!-- Informations sur vous -->
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <!-- Formulaire de contact ou informations de contact -->
+    </section>
+</main>
 
 <footer>
-<!-- Boutons de navigation -->
-<div class="button-container">
-    <button onclick="pagePrecedente()" class="navigation-button left">Précédent</button>
-    <button onclick="pageSuivante()" class="navigation-button right">Suivant</button>
-</div>
-
-    <!-- Ajoutez ceci à l'endroit où vous voulez afficher la flèche -->
-    <button id="backToTopBtn" title="Retour en haut">&#9650;</button>
-
-
-    <!-- Ajoutez ici le contenu du pied de page -->
-
-    <!-- Icône Whatsapp -->
-    <a href="https://web.whatsapp.com/" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Icône Facebook -->
-    <a href="https://web.facebook.com/?locale=fr_FR&_rdc=1&_rdr" target="_blank">
-        <i class="fab fa-facebook"></i>
-    </a>
-
-    <!-- Icône Twitter -->
-    <a href="https://twitter.com/home" target="_blank">
-        <i class="fab fa-twitter"></i>
-    </a>
-
-    <!-- Icône Email -->
-    <a href="mailto:elconquistadorbaoulyn@email.com,nelsonbaouly@gmail.com,nelsonbenito97@gmail.com" target="_blank">
-        <i class="fas fa-envelope"></i>
-    </a>
-
-
-    <!-- Icône Instagram -->
-    <a href="https://www.instagram.com/" target="_blank">
-        <i class="fab fa-instagram"></i>
-    </a>
-
-    <!-- Icône Telegram -->
-    <a href="https://web.telegram.org/a/" target="_blank">
-        <i class="fab fa-telegram"></i>
-    </a>
-
-    <!-- Icône YouTube -->
-    <a href="https://www.youtube.com/" target="_blank">
-        <i class="fab fa-youtube"></i>
-    </a>
-
-    <!-- Icône LinkedIn -->
-    <a href="https://LinkedIn.com/" target="_blank" class="icon">
-        <i class="fab fa-linkedin"></i>
-    </a>
-
-    <!-- Icône GitHub -->
-    <a href="https://github.com/" target="_blank" class="icon">
-        <i class="fab fa-github"></i>
-    </a>
-    <p>Tel: 44521822 / 47403551</p>
-    <p>Zone: Pelerin, commune de Pétion-Ville, Ouest, Haïti</p>
-    <p id="copyright">&copy; <span id="current-year"></span> Baouly NELSON inc. Tous droits réservés.</p>
-
-    <script>
-        try {
-            // Essayer d'exécuter le script
-            document.getElementById("current-year").textContent = new Date().getFullYear();
-        } catch (error) {
-            // En cas d'erreur, afficher l'erreur dans la console
-            console.error("Erreur JavaScript :", error.message);
-        }
-    </script>
-
+    <div class="social-media">
+        <a href="https://twitter.com/votrenom" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/votrenom" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/votrenom" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+    <p>&copy; 2024 Mon Portefolio. Tous droits réservés.</p>
 </footer>
 
+<script src="script.js"></script>
+
+</body>
 </html>

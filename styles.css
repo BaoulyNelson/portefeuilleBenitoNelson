@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #227;
+    color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    float: left;
+    margin-left: 20px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+}
+
+
+.menu-icon {
+    display: none; /* Caché par défaut sur les grands écrans */
+}
+
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Affiché sur les petits écrans */
+        cursor: pointer;
+    }
+
+    #menu {
+        display: none; /* Caché par défaut sur les petits écrans */
+    }
+
+    #menu.active {
+        display: block; /* Affiché lorsque le menu est ouvert */
+    }
+}
+
+
+nav ul {
+    list-style: none;
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding-top: 70px;
+}
+
+section {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.accueil-section {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.accueil-content {
+    z-index: 1;
+}
+
+.accueil-content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.accueil-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.btn:hover {
+    background-color: #ff6347;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
