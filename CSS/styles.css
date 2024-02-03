@@ -231,12 +231,14 @@ nav ul li a {
 
 
 /* Style commun pour tous les titres de section */
-section h2 {
+section h2,h3 {
     text-align: center; /* Centrer le titre */
     padding: 10px; /* Espacement autour du titre */
     border-radius: 5px; /* Bord arrondi */
     color: #fff; /* Couleur du texte du titre */
     background-color: gray; /* Couleur de fond du titre */
+    font-size: 24px;
+
 }
 
 /* Style pour toutes les sections */
@@ -333,6 +335,7 @@ footer {
 
 /* Style pour les icônes dans le pied de page */
 .footer a i {
+    text-decoration: none; /* Supprime la bordure autour des liens */
     color: white; /* Définit la couleur de toutes les icônes dans le pied de page à blanc */
 }
 
