@@ -87,7 +87,7 @@ nav {
     /* Couleur de fond */
     background-color: #333;
     /* Largeur de 10% de la largeur de son conteneur parent */
-    width: 50%;
+    width: 100%;
     /* Hauteur de 100% de la hauteur de son conteneur parent */
     height: 100%;
     /* Cacher le débordement des éléments à l'intérieur */
@@ -133,19 +133,24 @@ nav ul {
 
 }
 
+
+
 /* Style de base pour chaque élément de liste à l'intérieur de la balise nav */
 nav ul li {
     /* Espacement intérieur de 10 pixels autour de chaque élément de liste */
     padding: 7px;
     /* Transition pour une animation fluide */
-    transition: transform 0.1s ease;
+    transition: transform 0.1s ease, padding 0.1s ease; /* Ajout de la transition pour le padding */
 }
 
 /* Effet de survol de la souris */
 nav ul li:hover {
     /* Transformation de l'échelle pour agrandir légèrement l'élément */
     background-color: #227dea;
+    padding: 10px; /* Ajustez la taille du padding au survol */
 }
+
+
 /* Style pour les liens à l'intérieur des éléments de liste de la balise nav */
 nav ul li a {
     /* Suppression du soulignement des liens */
@@ -195,6 +200,15 @@ section img {
     margin: 0 auto; /* Centre l'image horizontalement */
 }
 
+.image-container {
+    max-width: 100%; /* Ajustez selon vos besoins */
+    overflow: hidden; /* Empêche le débordement horizontal */
+}
+
+.image-container img {
+    width: 100%; /* Remplacez max-width par width */
+    height: auto; /* Pour conserver le rapport hauteur/largeur original de l'image */
+}
 
 .contact-form form {
     max-width: 600px;
