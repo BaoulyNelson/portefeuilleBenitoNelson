@@ -1,5 +1,7 @@
 
 body {
+   
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
@@ -15,7 +17,7 @@ header {
     /* Couleur du texte blanc */
     color: white;
     /* Espacement intérieur de 15 pixels */
-    padding: 15px;
+    padding: 30px;
     /* Utilisation de flexbox pour aligner les éléments à l'extrémité droite */
     display: flex;
     justify-content: flex-end;
@@ -85,7 +87,7 @@ nav {
     /* Couleur de fond */
     background-color: #333;
     /* Largeur de 10% de la largeur de son conteneur parent */
-    width: 10%;
+    width: 30%;
     /* Hauteur de 100% de la hauteur de son conteneur parent */
     height: 100%;
     /* Cacher le débordement des éléments à l'intérieur */

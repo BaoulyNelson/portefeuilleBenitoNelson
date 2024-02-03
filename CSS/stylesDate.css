@@ -3,6 +3,7 @@
     background-color: #227;
     text-align: center;
     display: flex;
+    padding: 15px;
     justify-content: center;
     align-items: center;
     color: white;
