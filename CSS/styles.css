@@ -1,0 +1,250 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 100% de la hauteur de la fenêtre visible */
+}
+
+/* Style pour l'en-tête */
+header {
+    /* Couleur de fond bleue */
+    background-color: #227dea;
+    /* Couleur du texte blanc */
+    color: white;
+    /* Espacement intérieur de 15 pixels */
+    padding: 15px;
+    /* Utilisation de flexbox pour aligner les éléments à l'extrémité droite */
+    display: flex;
+    justify-content: flex-end;
+}
+/* Style pour l'icône de menu */
+.menu-icon {
+    /* Curseur de la souris se change en pointer */
+    cursor: pointer;
+    /* Utilisation de flexbox avec direction de colonne pour empiler les éléments verticalement */
+    display: flex;
+    flex-direction: column;
+    /* Taille de la police de 24 pixels */
+    font-size: 40px;
+    /* Position absolue, 20 pixels du haut et 20 pixels de la gauche */
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+/* Style pour l'icône de fermeture */
+.close-icon {
+    /* Curseur de la souris se change en pointer */
+    cursor: pointer;
+    /* Taille de la police de 40 pixels */
+    font-size: 40px;
+    /* Couleur du texte blanche */
+    color: white;
+    /* Position absolue, 20 pixels du haut et 20 pixels de la gauche */
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    /* Cache l'icône de fermeture par défaut */
+    display: none;
+}
+
+/* Style pour l'icône de fermeture lorsque le menu est ouvert */
+#menu.active .close-icon {
+    display: block;
+}
+
+/* Style pour l'icône de menu lorsque le menu est fermé */
+#menu:not(.active) ~ header .menu-icon {
+    display: block;
+}
+
+/* Style pour les lignes de l'icône de menu */
+.menu-icon span {
+    /* Hauteur des lignes de 3 pixels */
+    height: 3px;
+    /* Largeur des lignes de 25 pixels */
+    width: 25px;
+    /* Couleur de fond des lignes blanche */
+    background-color: white;
+    /* Marge de 5 pixels en haut et en bas des lignes, pas de marge horizontale */
+    margin: 5px 0;
+}
+
+/* Style de base pour la balise nav */
+nav {
+    /* Par défaut, la balise nav est cachée */
+    display: none;
+    /* Position relative pour positionner les éléments enfants par rapport à la position de la balise nav */
+    position: relative;
+    /* Positionnement au coin supérieur gauche */
+    top: 0;
+    left: 0;
+    /* Couleur de fond */
+    background-color: #333;
+    /* Largeur de 10% de la largeur de son conteneur parent */
+    width: 10%;
+    /* Hauteur de 100% de la hauteur de son conteneur parent */
+    height: 100%;
+    /* Cacher le débordement des éléments à l'intérieur */
+    overflow: hidden;
+    /* Espacement en haut pour éviter de cacher le contenu sous la barre de navigation */
+    padding-top: 60px;
+}
+
+/* Style appliqué lorsque la classe "active" est ajoutée à la balise nav (c'est-à-dire lorsque le menu est ouvert) */
+nav.active {
+    /* Affichage de la balise nav */
+    display: block;
+    /* Animation de l'ouverture du menu */
+    animation: slideIn 0.1s ease-in-out;
+}
+
+/* Définition de l'animation slideIn */
+@keyframes slideIn {
+    /* Départ de la position -100% (entièrement à gauche) */
+    from {
+        left: -100%;
+    }
+    /* Arrivée à la position 0 (entièrement visible) */
+    to {
+        left: 0;
+    }
+}
+
+/* Style pour la liste non ordonnée à l'intérieur de la balise nav */
+nav ul {
+    /* Suppression des puces de liste */
+    list-style: none;
+    /* Suppression des marges et des rembourrages par défaut */
+    padding: 0;
+    margin: 0;
+    /* Utilisation de flexbox avec direction de colonne pour aligner les éléments verticalement */
+    display: flex;
+    flex-direction: column;
+   /* Ajoutez une hauteur maximale pour définir la limite de la barre de défilement */
+   max-height: 200px; /* Modifiez cette valeur selon vos besoins */
+   /* Ajoutez une barre de défilement uniquement si le contenu dépasse la hauteur maximale */
+   overflow-y: auto;
+
+}
+
+/* Style de base pour chaque élément de liste à l'intérieur de la balise nav */
+nav ul li {
+    /* Espacement intérieur de 10 pixels autour de chaque élément de liste */
+    padding: 7px;
+    /* Transition pour une animation fluide */
+    transition: transform 0.1s ease;
+}
+
+/* Effet de survol de la souris */
+nav ul li:hover {
+    /* Transformation de l'échelle pour agrandir légèrement l'élément */
+    transform: scale(1.1);
+    background-color: #227dea;
+}
+/* Style pour les liens à l'intérieur des éléments de liste de la balise nav */
+nav ul li a {
+    /* Suppression du soulignement des liens */
+    text-decoration: none;
+    /* Couleur du texte blanche */
+    color: white;
+    /* Taille de la police de 18 pixels */
+    font-size: 18px;
+
+}
+.contact-form {
+    margin-top: 20px;
+}
+/* Style commun pour tous les titres de section */
+section h2 {
+    text-align: center; /* Centrer le titre */
+    padding: 10px; /* Espacement autour du titre */
+    border-radius: 5px; /* Bord arrondi */
+    color: #fff; /* Couleur du texte du titre */
+    background-color: #007bff; /* Couleur de fond du titre */
+}
+
+/* Style pour toutes les sections */
+section {
+    background-color: #f0f0f0; /* Couleur de fond pour toutes les sections */
+}
+
+/* Style pour les paragraphes carrés */
+section p {
+    text-align: justify; /* Centrer horizontalement */
+    max-width: 500px; /* Largeur maximale de 500px */
+    margin: 0 auto; /* Centrer horizontalement */
+}
+
+/* Aligner horizontalement les éléments dans les sections */
+section * {
+    max-width: 500px;
+    margin: 0 auto; /* Centrer horizontalement les éléments */
+}
+/* Style pour cacher toutes les sections sauf la section #accueil */
+section:not(#accueil) {
+    display: none;
+}
+/* Style pour centrer les images */
+section img {
+    display: block; /* Permet de centrer l'image */
+    margin: 0 auto; /* Centre l'image horizontalement */
+}
+
+
+.contact-form form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form form input[type="text"],
+.contact-form form input[type="email"],
+.contact-form form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.contact-form form textarea {
+    resize: vertical;
+}
+
+.contact-form form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact-form form button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Nouveau style pour le footer */
+footer {
+    margin-top: auto;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+

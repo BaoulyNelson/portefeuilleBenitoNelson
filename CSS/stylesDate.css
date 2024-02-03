@@ -1,0 +1,17 @@
+
+.header {
+    background-color: #227;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#current-time {
+    font-size: 20px;
+    display: inline-flex;
+
+}
+
+
