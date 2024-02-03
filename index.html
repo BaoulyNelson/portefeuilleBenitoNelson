@@ -13,6 +13,8 @@
         <link rel="stylesheet" href="CSS/stylesDate.css">
         <link rel="stylesheet" href="CSS/stylesMonterHaut.css">
         <link rel="stylesheet" href="CSS/stylesTableau.css">
+        <link rel="stylesheet" href="CSS/stylesFooter.css">
+
     
         <!-- Assurez-vous d'inclure la bibliothèque Font Awesome dans votre fichier HTML -->
         <script src="https://kit.fontawesome.com/4675b5c56a.js" crossorigin="anonymous"></script>
@@ -286,11 +288,10 @@
           $('#registerModal').modal('show');
         });
       </script>
-      
-    <footer class="footer">
-        <!-- Ajoutez ceci à l'endroit où vous voulez afficher la flèche -->
-        <button id="backToTopBtn" title="Retour en haut">&#9650;</button>
-      
+ 
+      <div id="footer">
+        <div class="white-icon">
+       
         <!-- Icône Whatsapp -->
         <a href="https://web.whatsapp.com/" target="_blank">
             <i class="fab fa-whatsapp"></i>
@@ -336,10 +337,13 @@
         <a href="https://github.com/" target="_blank" class="icon">
             <i class="fab fa-github"></i>
         </a>
+    </div>
         <p>Tel: 44521822 / 47403551</p>
         <p>Zone: Pelerin, commune de Pétion-Ville, Ouest, Haïti</p>
+         <!-- Ajoutez ceci à l'endroit où vous voulez afficher la flèche -->
+         <button id="backToTopBtn" title="Retour en haut">&#9650;</button>
         <p id="copyright">&copy; <span id="current-year"></span> Baouly NELSON inc. Tous droits réservés.</p>
-      
+      </div>
         <script>
             try {
                 // Essayer d'exécuter le script
