@@ -33,3 +33,38 @@ document.querySelectorAll('nav a').forEach(link => {
         document.getElementById(targetId).classList.add('active'); // Ajouter la classe 'active' à la section cible
     });
 });
+// Récupérer les éléments DOM
+const searchInput = document.getElementById('searchInput');
+const searchIcon = document.getElementById('searchIcon');
+const clearIcon = document.getElementById('clearIcon');
+
+// Ajouter des écouteurs d'événements
+searchIcon.addEventListener('click', showSearchInput);
+clearIcon.addEventListener('click', clearSearch);
+searchInput.addEventListener('input', updateClearIconVisibility);
+
+// Fonction pour afficher la barre de recherche
+function showSearchInput() {
+    searchInput.style.display = 'block';
+    searchIcon.style.display = 'none';
+    clearIcon.style.display = 'block';
+}
+
+// Fonction pour effacer la recherche
+function clearSearch() {
+    searchInput.value = '';
+    searchInput.style.display = 'none';
+    searchIcon.style.display = 'block';
+    clearIcon.style.display = 'none';
+}
+
+// Fonction pour mettre à jour la visibilité de l'icône de suppression
+function updateClearIconVisibility() {
+    if (searchInput.value.trim() !== '') {
+        clearIcon.style.display = 'block';
+    } else {
+        clearIcon.style.display = 'none';
+    }
+}
+
+

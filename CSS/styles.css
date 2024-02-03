@@ -17,7 +17,7 @@ header {
     /* Couleur du texte blanc */
     color: white;
     /* Espacement intérieur de 15 pixels */
-    padding: 30px;
+    padding: 20px;
     /* Utilisation de flexbox pour aligner les éléments à l'extrémité droite */
     display: flex;
     justify-content: flex-end;
@@ -86,14 +86,28 @@ nav {
     left: 10;
     /* Couleur de fond */
     background-color: #333;
-    /* Largeur de 10% de la largeur de son conteneur parent */
+    /* Largeur de 100% de la largeur de son conteneur parent */
     width: 100%;
     /* Hauteur de 100% de la hauteur de son conteneur parent */
     height: 100%;
     /* Cacher le débordement des éléments à l'intérieur */
     overflow: hidden;
     /* Espacement en haut pour éviter de cacher le contenu sous la barre de navigation */
-    padding-top: 60px;
+    padding-top: 30px;
+
+    /* Propriétés pour la disposition en grille */
+    grid-template-columns: repeat(3, 1fr); /* Trois colonnes de largeur égale */
+    grid-gap: 10px; /* Espace entre les cellules de la grille */
+}
+/* Style pour l'icône de recherche */
+.fa-search {
+    /* Taille de la police de 24 pixels */
+    font-size: 24px;
+    /* Curseur de la souris se change en pointer */
+    cursor: pointer;
+    /* Alignement à droite */
+    float: right;
+    /* Ajoutez d'autres styles si nécessaire */
 }
 
 /* Style appliqué lorsque la classe "active" est ajoutée à la balise nav (c'est-à-dire lorsque le menu est ouvert) */
@@ -146,7 +160,6 @@ nav ul li {
 /* Effet de survol de la souris */
 nav ul li:hover {
     /* Transformation de l'échelle pour agrandir légèrement l'élément */
-    background-color: #227dea;
     padding: 10px; /* Ajustez la taille du padding au survol */
 }
 
@@ -164,18 +177,71 @@ nav ul li a {
 .contact-form {
     margin-top: 20px;
 }
+/* Style pour le conteneur de recherche */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 300px; /* Ajustez la largeur maximale selon vos besoins */
+    margin: 10px; /* Ajustez la marge selon vos besoins */
+}
+
+/* Style pour la zone de texte de recherche */
+#searchInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Style pour l'icône de recherche */
+#searchIcon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: #555;
+}
+
+/* Style pour l'icône de suppression (initialement masquée) */
+#clearIcon {
+    position: absolute;
+    right: 30px;
+    cursor: pointer;
+    color: #555;
+    display: none;
+}
+
+/* Animation pour l'icône de suppression lorsqu'elle est affichée */
+#searchInput:not(:placeholder-shown) + #clearIcon {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
 /* Style commun pour tous les titres de section */
 section h2 {
     text-align: center; /* Centrer le titre */
     padding: 10px; /* Espacement autour du titre */
     border-radius: 5px; /* Bord arrondi */
     color: #fff; /* Couleur du texte du titre */
-    background-color: #007bff; /* Couleur de fond du titre */
+    background-color: gray; /* Couleur de fond du titre */
 }
 
 /* Style pour toutes les sections */
 section {
-    background-color: #f0f0f0; /* Couleur de fond pour toutes les sections */
+    background-color: whitesmoke; /* Couleur de fond pour toutes les sections */
 }
 
 /* Style pour les paragraphes carrés */
@@ -183,6 +249,7 @@ section p {
     text-align: justify; /* Centrer horizontalement */
     max-width: 500px; /* Largeur maximale de 500px */
     margin: 0 auto; /* Centrer horizontalement */
+    font-size: 20px;
 }
 
 /* Aligner horizontalement les éléments dans les sections */
@@ -198,6 +265,7 @@ section:not(#accueil) {
 section img {
     display: block; /* Permet de centrer l'image */
     margin: 0 auto; /* Centre l'image horizontalement */
+    
 }
 
 .image-container {
