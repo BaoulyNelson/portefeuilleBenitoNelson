@@ -83,11 +83,11 @@ nav {
     position: relative;
     /* Positionnement au coin supérieur gauche */
     top: 0;
-    left: 0;
+    left: 10;
     /* Couleur de fond */
     background-color: #333;
     /* Largeur de 10% de la largeur de son conteneur parent */
-    width: 30%;
+    width: 50%;
     /* Hauteur de 100% de la hauteur de son conteneur parent */
     height: 100%;
     /* Cacher le débordement des éléments à l'intérieur */
@@ -144,7 +144,6 @@ nav ul li {
 /* Effet de survol de la souris */
 nav ul li:hover {
     /* Transformation de l'échelle pour agrandir légèrement l'élément */
-    transform: scale(1.1);
     background-color: #227dea;
 }
 /* Style pour les liens à l'intérieur des éléments de liste de la balise nav */
@@ -248,5 +247,10 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
+}
+
+/* Style pour les icônes dans le pied de page */
+.footer a i {
+    color: white; /* Définit la couleur de toutes les icônes dans le pied de page à blanc */
 }
 
