@@ -22,57 +22,32 @@ header {
     display: flex;
     justify-content: flex-end;
 }
-/* Style pour l'icône de menu */
-.menu-icon {
-    /* Curseur de la souris se change en pointer */
-    cursor: pointer;
-    /* Utilisation de flexbox avec direction de colonne pour empiler les éléments verticalement */
-    display: flex;
-    flex-direction: column;
-    /* Taille de la police de 24 pixels */
-    font-size: 40px;
-    /* Position absolue, 20 pixels du haut et 20 pixels de la gauche */
-    position: absolute;
-    top: 10px;
-    left: 20px;
+
+   /* Ajouter du style personnalisé au besoin */
+   .menu-icon {
+    cursor: pointer; /* Ajouter un curseur pointer pour indiquer qu'il s'agit d'un élément cliquable */
 }
 
-/* Style pour l'icône de fermeture */
-.close-icon {
-    /* Curseur de la souris se change en pointer */
-    cursor: pointer;
-    /* Taille de la police de 40 pixels */
-    font-size: 40px;
-    /* Couleur du texte blanche */
-    color: white;
-    /* Position absolue, 20 pixels du haut et 20 pixels de la gauche */
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    /* Cache l'icône de fermeture par défaut */
-    display: none;
-}
-
-/* Style pour l'icône de fermeture lorsque le menu est ouvert */
-#menu.active .close-icon {
-    display: block;
-}
-
-/* Style pour l'icône de menu lorsque le menu est fermé */
-#menu:not(.active) ~ header .menu-icon {
-    display: block;
-}
-
-/* Style pour les lignes de l'icône de menu */
 .menu-icon span {
-    /* Hauteur des lignes de 3 pixels */
-    height: 3px;
-    /* Largeur des lignes de 25 pixels */
+    display: block;
     width: 25px;
-    /* Couleur de fond des lignes blanche */
-    background-color: white;
-    /* Marge de 5 pixels en haut et en bas des lignes, pas de marge horizontale */
-    margin: 5px 0;
+    height: 3px;
+    margin-bottom: 5px;
+    background-color: #333;
+    transition: transform 0.2s ease-in-out;
+
+}
+
+.menu-icon.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Style de base pour la balise nav */
@@ -99,6 +74,7 @@ nav {
     grid-template-columns: repeat(3, 1fr); /* Trois colonnes de largeur égale */
     grid-gap: 10px; /* Espace entre les cellules de la grille */
 }
+
 /* Style pour l'icône de recherche */
 .fa-search {
     /* Taille de la police de 24 pixels */
@@ -246,14 +222,18 @@ section {
     background-color: whitesmoke; /* Couleur de fond pour toutes les sections */
 }
 
-/* Style pour les paragraphes carrés */
 section p {
-    text-align: justify; /* Centrer horizontalement */
-    max-width: 500px; /* Largeur maximale de 500px */
-    margin: 0 auto; /* Centrer horizontalement */
+    text-align: justify;
+    max-width: 500px;
+    margin: 0 auto;
     font-size: 20px;
+    /* Ajouter une réinitialisation des styles */
+    word-spacing: normal;
+    letter-spacing: normal;
 }
 
+
+  
 /* Aligner horizontalement les éléments dans les sections */
 section * {
     max-width: 500px;
@@ -262,6 +242,21 @@ section * {
 /* Style pour cacher toutes les sections sauf la section #accueil */
 section:not(#accueil) {
     display: none;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+}
+
+.actions {
+    margin-bottom: 10px;
+}
+
+.actions i {
+    cursor: pointer;
+    margin-right: 10px;
 }
 /* Style pour centrer les images */
 section img {

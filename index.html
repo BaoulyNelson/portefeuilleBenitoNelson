@@ -4,42 +4,22 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-        <!-- Incluez d'abord les feuilles de réinitialisation -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <!-- Styles Bootstrap (CSS) pour la barre de navigation -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     
+       
         <!-- Ensuite, incluez vos propres feuilles de style -->
         <link rel="stylesheet" href="CSS/styles.css">
         <link rel="stylesheet" href="CSS/stylesDate.css">
         <link rel="stylesheet" href="CSS/stylesMonterHaut.css">
         <link rel="stylesheet" href="CSS/stylesTableau.css">
         <link rel="stylesheet" href="CSS/stylesFooter.css">
-
-    
-        <!-- Assurez-vous d'inclure la bibliothèque Font Awesome dans votre fichier HTML -->
-        <script src="https://kit.fontawesome.com/4675b5c56a.js" crossorigin="anonymous"></script>
-         <!-- Mise à jour vers Bootstrap 5.3 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-
         <title>Ma porte feuille</title>
         <style>
-            .container {
-                display: flex;
-                justify-content: flex-end;
-                margin: 10px;
-            }
-            
-            .actions {
-                margin-bottom: 10px;
-            }
-            
-            .actions i {
-                cursor: pointer;
-                margin-right: 10px;
-            }
-            
-          </style>
+      
+        </style>
     </head>
+    
     
 
 <body>
@@ -52,24 +32,26 @@
             <span></span>
             <span></span>
         </div>
+        <div id="close-icon" class="close-icon" onclick="toggleMenu()"></div>
+        
         <div class="container">
             <div class="actions">
               <i class="fas fa-user" data-toggle="modal" data-target="#loginModal"> Se connecter</i>
             </div>
 
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Rechercher...">
-            <i class="fas fa-search" id="searchIcon"></i>
-            <i class="fas fa-times" id="clearIcon"></i>
-        </div>
-    </div>
 
-    
+            <div class="container mt-3">
+                <form class="d-flex" id="searchForm">
+                    <input class="form-control me-2" type="search" placeholder="search" aria-label="Recherche" style="display: none;">
+                    <button class="btn btn-outline-success" type="submit" style="display: none;">search</button>
+                    <i class="fas fa-times ml-2" id="clearIcon"></i>
+                </form>
+                <i class="fas fa-search" id="searchIcon"></i>
+            </div>
     </header>
     
     <nav id="menu">
-        <div id="close-icon" class="close-icon" onclick="toggleMenu()">&times;</div>
-        <ul>
+           <ul>
             <li><a href="#" onclick="showSection('accueil')"><i class="fas fa-home"></i> Accueil</a></li>
             <li><a href="#" onclick="showSection('projects')"><i class="fas fa-project-diagram"></i> Projets</a></li>
             <li><a href="#" onclick="showSection('a-propos')"><i class="fas fa-user"></i> À propos</a></li>
@@ -276,11 +258,7 @@
           </div>
         </div>
       </div>
-      
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-      
+     
       <script>
         // Afficher le modal d'inscription lorsque l'utilisateur clique sur "Inscrivez-vous"
         document.getElementById('showRegister').addEventListener('click', function() {
@@ -356,6 +334,13 @@
         
       
         </footer>
+  <!-- Bibliothèque Font Awesome -->
+  <script src="https://kit.fontawesome.com/4675b5c56a.js" crossorigin="anonymous"></script>
+    
+  <!-- Scripts Bootstrap (JS) pour la barre de navigation -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
     <script src="SCRIPT/script.js"></script>
     <script src="SCRIPT/scriptDate.js"></script>

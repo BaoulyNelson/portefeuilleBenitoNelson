@@ -1,23 +1,13 @@
-// Fonction pour afficher la section correspondante et masquer les autres
-function showSection(sectionId) {
-    // Cacher toutes les sections
-    var sections = document.querySelectorAll('section');
-    sections.forEach(function(section) {
-        section.style.display = 'none';
-    });
-    // Afficher la section correspondante
-    var sectionToShow = document.getElementById(sectionId);
-    if (sectionToShow) {
-        sectionToShow.style.display = 'block';
-    }
-}
 
-// Fonction pour ouvrir/fermer le menu
 function toggleMenu() {
+    var menuIcon = document.getElementById('menu-icon');
+    menuIcon.classList.toggle('active');
+    
+    // Autres actions à effectuer lorsque le menu est ouvert ou fermé
+    // Par exemple, ouvrir ou fermer le menu lui-même
     var menu = document.getElementById('menu');
     menu.classList.toggle('active');
 }
-
 
 // Ajouter un gestionnaire d'événement pour écouter les clics sur les liens de navigation
 document.querySelectorAll('nav a').forEach(link => {
@@ -33,38 +23,36 @@ document.querySelectorAll('nav a').forEach(link => {
         document.getElementById(targetId).classList.add('active'); // Ajouter la classe 'active' à la section cible
     });
 });
-// Récupérer les éléments DOM
-const searchInput = document.getElementById('searchInput');
-const searchIcon = document.getElementById('searchIcon');
-const clearIcon = document.getElementById('clearIcon');
+document.addEventListener("DOMContentLoaded", function() {
+    var searchIcon = document.getElementById("searchIcon");
+    var searchForm = document.getElementById("searchForm");
+    var searchInput = searchForm.querySelector("input");
+    var searchButton = searchForm.querySelector("button");
 
-// Ajouter des écouteurs d'événements
-searchIcon.addEventListener('click', showSearchInput);
-clearIcon.addEventListener('click', clearSearch);
-searchInput.addEventListener('input', updateClearIconVisibility);
+    // Au clic sur l'icône de recherche
+    searchIcon.addEventListener("click", function() {
+        // Masquer l'icône de recherche
+        searchIcon.style.display = "none";
+        // Afficher le champ de recherche
+        searchInput.style.display = "block";
+        // Afficher le bouton de recherche
+        searchButton.style.display = "inline";
+        // Focus sur le champ de recherche
+        searchInput.focus();
+    });
 
-// Fonction pour afficher la barre de recherche
-function showSearchInput() {
-    searchInput.style.display = 'block';
-    searchIcon.style.display = 'none';
-    clearIcon.style.display = 'block';
-}
+    // Au clic sur l'icône de suppression (effacer)
+    document.getElementById("clearIcon").addEventListener("click", function() {
+        // Réinitialiser le formulaire
+        searchForm.reset();
+        // Masquer le champ de recherche
+        searchInput.style.display = "none";
+        // Masquer le bouton de recherche
+        searchButton.style.display = "none";
+        // Afficher à nouveau l'icône de recherche
+        searchIcon.style.display = "inline";
+    });
+});
 
-// Fonction pour effacer la recherche
-function clearSearch() {
-    searchInput.value = '';
-    searchInput.style.display = 'none';
-    searchIcon.style.display = 'block';
-    clearIcon.style.display = 'none';
-}
-
-// Fonction pour mettre à jour la visibilité de l'icône de suppression
-function updateClearIconVisibility() {
-    if (searchInput.value.trim() !== '') {
-        clearIcon.style.display = 'block';
-    } else {
-        clearIcon.style.display = 'none';
-    }
-}
 
 
