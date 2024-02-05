@@ -259,18 +259,4 @@ section img {
 }
 
 
-/* Nouveau style pour le footer */
-footer {
-    margin-top: auto;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-}
-
-/* Style pour les icônes dans le pied de page */
-.footer a i {
-    text-decoration: none; /* Supprime la bordure autour des liens */
-    color: white; /* Définit la couleur de toutes les icônes dans le pied de page à blanc */
-}
 
