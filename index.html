@@ -18,8 +18,6 @@
  
     </head>
     
-    
-
 <body>
     <div class="header">
         <p id="current-time"></p>
@@ -34,26 +32,22 @@
         
         <div class="container mt-3">
           <form class="d-flex" id="searchForm">
-              <input class="form-control me-2" type="search" placeholder="search" aria-label="Recherche" style="display: none;">
-              <button class="btn btn-outline-success" type="submit" style="display: none;">search</button>
+            <input class="form-control me-2" type="search" placeholder="search" aria-label="Recherche" style="display: none; width: 150px; height: 30px;">
+            <button class="btn btn-outline-success" type="submit" style="display: none; width: 80px; height: 8px; padding-bottom: 30px;">search</button>
           </form>
-          <i class="fas fa-search" id="searchIcon"></i>
-      </div>
-
-        <div class="container d-flex justify-content-center mt-3">
-            <!-- Icône de profil -->
-            <i class="fas fa-user-circle fa-lg align-self-center mr-2"></i>
-        
-            <!-- Bouton déclencheur de modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
-                Se connecter
-            </button>
+          <i class="fas fa-search" style="cursor: pointer;" id="searchIcon"></i>
         </div>
         
 
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
+  <i class="fas fa-user mr-2"></i> Connexion/Inscription
+</button>
 
     </header>
-    
+
+    <div id="messageBox"></div>
+    <div id="previewBox"></div>
     <nav id="menu">
            <ul>
             <li><a href="#" onclick="showSection('accueil')"><i class="fas fa-home"></i> Accueil</a></li>
@@ -62,6 +56,8 @@
             <li><a href="#" onclick="showSection('contact')"><i class="fas fa-envelope"></i> Contact</a></li>
         </ul>
     </nav>
+   
+    
     
     <section id="accueil">
         <h2>Bienvenue à ma page d'accueil</h2>
@@ -88,8 +84,6 @@
             N'hésitez pas à me contacter si vous avez besoin d'aide pour vos projets informatiques ou si vous souhaitez discuter de l'avenir passionnant de la technologie !
             
             </p>
-        
-  
     </section>
     
     <section id="projects" style="display: none;">
@@ -104,8 +98,6 @@
                 <p>Description : J'ai développé une application de gestion de tâches permettant aux utilisateurs de créer, organiser et suivre leurs tâches quotidiennes. L'application offre une interface conviviale et des fonctionnalités avancées telles que les rappels et la collaboration en temps réel.</p>
           <br>
           <p>Réalisations : J'ai contribué à la conception et au développement d'une application web utilisée par des milliers d'utilisateurs. J'ai travaillé en étroite collaboration avec une équipe de développeurs pour livrer des fonctionnalités clés dans les délais impartis.</p>
-    
-           
                <br>
                 <p>Technologies utilisées : Python, Django, MySQL</p>
                 <p>Description : J'ai contribué à la création d'un site web e-commerce pour une entreprise de vente en ligne. J'ai travaillé sur le développement du panier d'achat, du système de paiement en ligne et de l'intégration avec des services de livraison.</p>
@@ -173,100 +165,137 @@
         </div>
         <p>N'hésitez pas à me contacter pour toute demande ou opportunité professionnelle. Vous pouvez me joindre par e-mail à elconquistadorbaoulyn@gmail.com ou me retrouver sur LinkedIn.</p>
         <div class="container mt-5">
-          <form action="#" method="post">
+          <form action="https://docs.google.com/forms/d/e/1FAIpQLSfvY8EMFk9Sp4D_-oyGils0Jar2-lE0shkCqCQdj253St001g/formResponse" method="post">
             <div class="mb-3">
               <label for="nom" class="form-label">Nom</label>
-              <input type="text" class="form-control" id="nom" name="nom" required>
+              <input type="text" class="form-control" id="nom"placeholder="nom" name="entry.nom" required>
             </div>
             <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" name="email" required>
+              <label for="prenom" class="form-label">Prenom</label>
+              <input type="prenom" class="form-control" id="prenom" placeholder="prenom" name="entry.prenom" required>
             </div>
             <div class="mb-3">
               <label for="message" class="form-label">Message</label>
-              <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-            </div>
+              <textarea class="form-control" id="message" name="entry.message" rows="4" maxlength="100" oninput="updateCharCount()" required></textarea>
+              <div id="charCount">0/100</div>
+          </div>
             <button type="submit" class="btn btn-primary">Envoyer</button>
           </form>
         </div>
     </section>
     
-
-<!-- Modal de connexion -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="loginModalLabel">Connexion</h5>
-          <button type="button" class="btn-btn-close" data-dismiss="modal" aria-label="Btn-close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <!-- Formulaire de connexion (username, mot de passe) -->
-          <form>
-            <div class="form-group">
-              <label for="username">Nom d'utilisateur</label>
-              <input type="text" class="form-control" id="username" required placeholder="Entrez votre nom d'utilisateur">
-            </div>
-            <div class="form-group">
-              <label for="password">Mot de passe</label>
-              <input type="password" class="form-control" id="password"required placeholder="Entrez votre mot de passe">
-            </div>
-            <button type="submit" class="btn btn-primary">Se connecter</button>
-            <a href="#" id="showRegisterLink">Pas encore de compte ? Inscrivez-vous</a>
-          </form>
-        </div>
+          <div class="modal-header">
+              <h5 class="modal-title" id="loginModalLabel">Connexion/Inscription</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <ul class="nav nav-tabs" id="loginTabs" role="tablist">
+                  <li class="nav-item" role="presentation">
+                      <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Connexion</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                      <a class="nav-link" id="register-tab" data-bs-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Inscription</a>
+                  </li>
+              </ul>
+              <div class="tab-content" id="loginTabsContent">
+                  <!-- Connexion Tab -->
+                  <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                      <form>
+                          <div class="mb-3">
+                              <label for="loginUsername" class="form-label">Nom d'utilisateur</label>
+                              <input type="text" class="form-control" id="loginUsername" required>
+                          </div>
+                          <div class="mb-3">
+                              <label for="loginPassword" class="form-label">Mot de passe</label>
+                              <input type="password" class="form-control" id="loginPassword" required>
+                              <div class="mt-2">
+                                  <a href="#" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal">Mot de passe oublié?</a>
+                              </div>
+                          </div>
+                          <button type="submit" class="btn btn-primary">Se connecter</button>
+                          <div class="mt-2">
+                            Vous n'avez pas de compte? <a href="#register" data-bs-toggle="tab" role="tab" id="switch-to-register">Inscrivez-vous ici</a>.
+                        </div>
+                        
+                      </form>
+                  </div>
+                  <!-- Inscription Tab -->
+                  <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                      <form>
+                          <div class="mb-3">
+                              <label for="registerFirstName" class="form-label">Prénom</label>
+                              <input type="text" class="form-control" id="registerFirstName" required>
+                          </div>
+                          <div class="mb-3">
+                              <label for="registerLastName" class="form-label">Nom</label>
+                              <input type="text" class="form-control" id="registerLastName" required>
+                          </div>
+                          <div class="mb-3">
+                              <label for="registerEmail" class="form-label">Adresse email</label>
+                              <input type="email" class="form-control" id="registerEmail" required>
+                          </div>
+                          <div class="mb-3">
+                              <label for="registerPassword" class="form-label">Mot de passe</label>
+                              <input type="password" class="form-control" id="registerPassword" required>
+                          </div>
+                          <button type="submit" class="btn btn-primary">S'inscrire</button>
+                          <div class="mt-2">
+                            Vous avez déjà un compte? <a href="#login" data-bs-toggle="tab" role="tab" id="switch-to-login">Connectez-vous ici</a>.
+                        </div>
+                        
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+          </div>
       </div>
-    </div>
   </div>
-  
-  <!-- Modal d'inscription -->
-  <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+</div>
+
+<!-- Mot de passe oublié Modal -->
+<div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="registerModalLabel">Inscription</h5>
-          <button type="button" class="btn-btn-close" data-dismiss="modal" aria-label="Btn-close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <!-- Formulaire d'inscription -->
-          <form>
-            <div class="form-group">
-              <label for="registerNom">Nom</label>
-              <input type="text" class="form-control" id="registerNom" placeholder="Entrez votre nom" required>
-            </div>
-            <div class="form-group">
-              <label for="registerPrenom">Prenom</label>
-              <input type="text" class="form-control" id="registerPrenom" placeholder="Entrez votre prénom" required>
-            </div>
-            <div class="form-group">
-              <label for="registerEmail">Adresse e-mail</label>
-              <input type="email" class="form-control" id="registerEmail" aria-describedby="emailHelp" required>
-              <div id="emailHelp" class="form-text">Nous ne partagerons jamais votre adresse e-mail avec personne d'autre.</div>
-            </div>
-            <div class="form-group">
-              <label for="registerPassword">Mot de passe</label>
-              <input type="password" class="form-control" id="registerPassword" required>
-            </div>
-            <button type="submit" class="btn btn-primary">S'inscrire</button>
-          </form>
-        </div>
+          <div class="modal-header">
+              <h5 class="modal-title" id="forgotPasswordModalLabel">Mot de passe oublié</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <p>Entrez l'adresse email associée à votre compte. Nous vous enverrons un lien pour réinitialiser votre mot de passe.</p>
+              <form>
+                  <div class="mb-3">
+                      <label for="forgotPasswordEmail" class="form-label">Adresse email</label>
+                      <input type="email" class="form-control" id="forgotPasswordEmail" required>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Envoyer le lien de réinitialisation</button>
+              </form>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+          </div>
       </div>
-    </div>
   </div>
-
+</div>
 
   
-  <script>
-    // Afficher le modal d'inscription lorsque l'utilisateur clique sur "Inscrivez-vous"
-    document.getElementById('showRegisterLink').addEventListener('click', function() {
-      $('#loginModal').modal('hide');
-      $('#registerModal').modal('show');
-    });
-  </script>
+<script>
+  document.getElementById('switch-to-register').addEventListener('click', function () {
+      var loginTabs = new bootstrap.Tab(document.getElementById('register-tab'));
+      loginTabs.show();
+  });
+
+  document.getElementById('switch-to-login').addEventListener('click', function () {
+      var loginTabs = new bootstrap.Tab(document.getElementById('login-tab'));
+      loginTabs.show();
+  });
+</script>
+
   
  
       <div id="footer">

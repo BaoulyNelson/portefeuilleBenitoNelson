@@ -54,5 +54,12 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+function updateCharCount() {
+    var textarea = document.getElementById('message');
+    var charCountElement = document.getElementById('charCount');
+    var currentLength = textarea.value.length;
+    var maxLength = textarea.maxLength;
 
+    charCountElement.textContent = currentLength + '/' + maxLength;
+}
 
