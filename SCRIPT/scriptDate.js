@@ -22,3 +22,12 @@ setInterval(updateTime, 1000);
 
 // Appelez updateTime une fois pour afficher l'heure initiale
 updateTime();
+
+function updateCharCount() {
+    var textarea = document.getElementById('message');
+    var charCountElement = document.getElementById('charCount');
+    var currentLength = textarea.value.length;
+    var maxLength = textarea.maxLength;
+
+    charCountElement.textContent = currentLength + '/' + maxLength;
+}
