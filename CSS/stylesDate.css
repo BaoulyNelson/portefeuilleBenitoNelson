@@ -1,17 +1,9 @@
-.header {
-    background-color: #227;
-    text-align: center;
-    display: flex;
-    padding: 2px;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
-
 #current-time {
-    font-size: 20px;
-    display: inline-flex;
-
+    text-align: right; /* Pour centrer le texte */
+    color: white; /* Pour définir la couleur du texte en blanc */
+    font-size: 18px; /* Pour définir la taille de la police à 18px */
+    background-image: url('https://example.com/chemin/vers/votre/icone-horloge.png'); /* Définir l'URL CDN de l'icône horloge comme image de fond */
+    background-size: 18px; /* Ajuster la taille de l'icône horloge à 18px */
+    background-repeat: no-repeat; /* Empêcher la répétition de l'icône horloge */
+    padding-left: 20px; /* Ajouter un espacement à gauche pour l'icône horloge */
 }
-
-
