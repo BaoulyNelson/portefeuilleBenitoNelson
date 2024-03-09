@@ -7,3 +7,17 @@
     background-repeat: no-repeat; /* Empêcher la répétition de l'icône horloge */
     padding-left: 20px; /* Ajouter un espacement à gauche pour l'icône horloge */
 }
+
+.iframe-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iframe-container iframe {
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
