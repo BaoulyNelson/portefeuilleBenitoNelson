@@ -1,12 +1,17 @@
 body {
     overflow-x: hidden;
-    margin: 0;
-    padding: 0;
     font-family: 'Arial', sans-serif;
     display: flex;
     overflow-y: auto;
     flex-direction: column;
     min-height: 100vh; /* 100% de la hauteur de la fenêtre visible */
+    font-family: Arial, sans-serif; /* Choisissez une police lisible */
+    font-size: 16px; /* Taille de police par défaut */
+    line-height: 1.6; /* Hauteur de ligne pour une meilleure lisibilité */
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime le remplissage par défaut */
+    background-color: #f0f0f0; /* Couleur de fond */
+    color: #333; /* Couleur du texte */
 }
 /* Ajoutez ces styles pour désactiver le défilement lorsque la classe 'no-scroll' est présente sur le corps */
 body.no-scroll {

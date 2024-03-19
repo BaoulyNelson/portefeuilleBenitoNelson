@@ -25,23 +25,24 @@
 
     <nav id="menu">
       <p id="current-time"><i class="fa fa-clock-o"></i></p>
-      <div class="d-flex justify-content-end"> <!-- Utilisez des classes Bootstrap pour aligner à droite -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#searchModal">
-            <i class="fas fa-search"></i> Recherche
-        </button>
-    </div>
+    
     
       <ul>
         <li><a href="#" onclick="showSection('accueil')"><i class="fas fa-home"></i> Accueil</a></li>
         <li><a href="#" onclick="showSection('projects')"><i class="fas fa-project-diagram"></i> Projets</a></li>
-        <li><a href="#" onclick="showSection('a-propos')"><i class="fas fa-user"></i> À propos</a></li>
-        <li><a href="#" onclick="showSection('contact')"><i class="fas fa-envelope"></i> Contact</a></li>
+         <li><a href="#" onclick="showSection('contact')"><i class="fas fa-envelope"></i> Contact</a></li>
+         <div class="justify-content-end">
+          <button type="button" class="btn btn-icon text-white" data-bs-toggle="modal" data-bs-target="#searchModal">
+              <i class="fas fa-search"></i>
+          </button>
+      </div>
       </ul>
           
-            <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
-  <i class="fas fa-user mr-2"></i> Connexion/Inscription
-</button>
+      <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal"title="S'identifier">
+            <i class="fas fa-user mr-2"></i>
+        </button>
+    </div>
     </nav>
 
   </header>
