@@ -17,3 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
         document.documentElement.scrollTop = 0;
     });
 });
+
+function changeTheme(theme) {
+    const body = document.body;
+    body.className = theme;
+    // Vous pouvez également sauvegarder le thème préféré de l'utilisateur dans le stockage local pour le rappeler lors des visites ultérieures.
+}

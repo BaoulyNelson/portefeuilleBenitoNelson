@@ -2,42 +2,39 @@
 .contact-form {
     margin-top: 20px;
 }
-
-
-
 /* Style commun pour tous les titres de section */
-section h2,h3 {
+section h2, section h3 {
     text-align: center; /* Centrer le titre */
     padding: 10px; /* Espacement autour du titre */
     border-radius: 5px; /* Bord arrondi */
     color: #fff; /* Couleur du texte du titre */
     background-color: gray; /* Couleur de fond du titre */
     font-size: 24px;
-
 }
 
 /* Style pour toutes les sections */
 section {
     background-color: whitesmoke; /* Couleur de fond pour toutes les sections */
+    position: relative; /* Position relative pour permettre le déplacement */
+    left: 0; /* Position initiale des sections à gauche */
+    transition: left 0.5s; /* Transition pour le déplacement */
 }
 
 section p {
-    text-align: justify;
-    max-width: 500px;
-    margin: 0 auto;
-    font-size: 20px;
-    /* Ajouter une réinitialisation des styles */
-    word-spacing: normal;
-    letter-spacing: normal;
+    text-align: center;
+    margin: 10px 0; /* Marge supérieure et inférieure de 10px pour les paragraphes */
 }
 
 
-  
-/* Aligner horizontalement les éléments dans les sections */
-section * {
-    max-width: 500px;
-    margin: 0 auto; /* Centrer horizontalement les éléments */
+/* Ajoutez cette classe au corps lorsque le panneau est ouvert */
+.no-scroll section {
+    left: 250px; /* Déplacement de 250px vers la droite lorsque le panneau est ouvert */
 }
+/* Ajoutez cette classe au corps lorsque le panneau est ouvert */
+.no-scroll section {
+    left: 250px; /* Déplacement de 250px vers la droite lorsque le panneau est ouvert */
+}
+
 /* Style pour cacher toutes les sections sauf la section #accueil */
 section:not(#accueil) {
     display: none;
