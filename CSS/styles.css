@@ -21,18 +21,14 @@ section {
 }
 
 section p {
-    text-align: center;
+    text-align: left;
     margin: 10px 0; /* Marge supérieure et inférieure de 10px pour les paragraphes */
 }
 
 
 /* Ajoutez cette classe au corps lorsque le panneau est ouvert */
 .no-scroll section {
-    left: 250px; /* Déplacement de 250px vers la droite lorsque le panneau est ouvert */
-}
-/* Ajoutez cette classe au corps lorsque le panneau est ouvert */
-.no-scroll section {
-    left: 250px; /* Déplacement de 250px vers la droite lorsque le panneau est ouvert */
+    right: 250px; /* Déplacement de 250px vers la droite lorsque le panneau est ouvert */
 }
 
 /* Style pour cacher toutes les sections sauf la section #accueil */
@@ -44,6 +40,10 @@ section:not(#accueil) {
     display: flex;
     justify-content: flex-end;
     margin: 10px;
+}
+.image-container img {
+    max-width: 200px; /* Définissez la largeur maximale souhaitée */
+    max-height: 200px; /* Définissez la hauteur maximale souhaitée */
 }
 
 #messageBox,#previewBox {

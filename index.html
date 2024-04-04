@@ -28,49 +28,43 @@
 
 <body>
     <header>
-
-        <nav id="menu">
-            <p id="current-time"><i class="fa fa-clock-o"></i></p>
-
-
-            <ul>
-                <li><a href="#" onclick="showSection('accueil')"><i class="fas fa-home"></i> Accueil</a></li>
-                <li><a href="#" onclick="showSection('projects')"><i class="fas fa-project-diagram"></i> Projets</a>
-                </li>
-                <li><a href="#" onclick="showSection('contact')"><i class="fas fa-envelope"></i> Contact</a></li>
-                <div class="justify-content-end">
-                    <button type="button" class="btn btn-icon text-white" data-bs-toggle="modal"
-                        data-bs-target="#searchModal">
-                        <i class="fas fa-search"></i>
-                    </button>
-                    
-                </div>
-                 
-            </ul>
-
-            <div class="d-flex justify-content-center">
-             
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal"
-                    title="S'identifier">
-                    <i class="fas fa-user mr-2"></i>
-                    
-                </button>
-                  <!-- Utilisez des balises <a> autour des icônes pour les rendre cliquables -->
-                    <a href="#" onclick="changeTheme('light')"><i class="fas fa-sun"></i></a>
-                    <a href="#" onclick="changeTheme('dark')"><i class="fas fa-moon"></i></a>
+        <!-- Icône de menu pour les appareils mobiles -->
+        <div id="menu-icon">&#9776;</div>
     
-
+        <!-- Barre de navigation principale -->
+        <nav id="menu">
+            <!-- Horloge actuelle (peut être déplacée en CSS si nécessaire) -->
+            <p id="current-time"><i class="fa fa-clock-o"></i></p>
+    
+            <!-- Liste des liens principaux -->
+            
+            <ul>
+                <button type="button" class="btn btn-icon text-white" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <i class="fas fa-search"></i>
+                </button>
+                <li><a href="#" onclick="showSection('accueil')"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="#" onclick="showSection('projects')"><i class="fas fa-project-diagram"></i> Projets</a></li>
+                <li><a href="#" onclick="showSection('contact')"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+    
+            <!-- Boutons supplémentaires (recherche, connexion, thème) -->
+            <div class="additional-buttons">
+               
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal" title="S'identifier">
+                    <i class="fas fa-user mr-2"></i>
+                </button>
+                <!-- Boutons de changement de thème -->
+                <a href="#" onclick="changeTheme('light')"><i class="fas fa-sun"></i></a>
+                <a href="#" onclick="changeTheme('dark')"><i class="fas fa-moon"></i></a>
             </div>
         </nav>
-
     </header>
-    <!-- Icône de menu -->
-    <div id="menu-icon">&#9776;</div>
-
-    <!-- Panneau latéral -->
+    
+    <!-- Panneau latéral pour les appareils mobiles -->
     <div id="side-panel">
         <span id="close-btn">&times;</span>
         <ul>
+            <!-- Liens vers différentes sections du site -->
             <li><a href="#accueil"><i class="fas fa-home"></i> Accueil</a></li>
             <li><a href="#projects"><i class="fas fa-star"></i> Projet en Vedette</a></li>
             <li><a href="#portfolio"><i class="fas fa-briefcase"></i> Portfolio Complet</a></li>
@@ -82,7 +76,7 @@
             <li><a href="#temoignages"><i class="fas fa-comments"></i> Témoignages</a></li>
         </ul>
     </div>
-
+    
 
     <!-- Modal -->
     <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
