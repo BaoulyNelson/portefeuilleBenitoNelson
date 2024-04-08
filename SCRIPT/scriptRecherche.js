@@ -1,46 +1,54 @@
-// Fonction pour filtrer les liens en temps réel et rendre les liens cliquables
-document.getElementById('searchInput').addEventListener('input', function() {
-  var searchTerm = this.value.toLowerCase();
-  var searchResults = document.getElementById('searchResults');
-  var found = false;
+// Récupérez les éléments DOM nécessaires
+const searchIcon = document.getElementById("searchIcon");
+const searchForm = document.getElementById("searchForm");
+const searchInput = document.getElementById("mySearch");
+const messageElement = document.getElementById("message");
 
-  // Effacer les résultats précédents
-  searchResults.innerHTML = '';
+// Cachez le formulaire de recherche initialement
+searchForm.style.display = "none";
 
-  // Parcourir les liens et vérifier s'ils contiennent le terme de recherche
-  document.querySelectorAll('#side-panel a').forEach(function(link) {
-    var linkText = link.textContent.toLowerCase();
-    if (linkText.includes(searchTerm)) {
-      found = true;
-      var preview = document.createElement('div');
-      var linkElement = document.createElement('a');
-      linkElement.href = link.href; // Lien cliquable
-      linkElement.textContent = linkText;
-      preview.appendChild(linkElement);
-      searchResults.appendChild(preview);
+// Ajoutez un gestionnaire d'événement de clic à l'icône de recherche
+searchIcon.addEventListener("click", function () {
+  // Affichez le formulaire de recherche
+  searchForm.style.display = "block";
+  // Définissez le focus sur le champ de recherche
+  searchInput.focus();
+});
+
+// Ajoutez un gestionnaire d'événement de saisie au champ de recherche
+searchInput.addEventListener("input", function () {
+  // Obtenez la valeur saisie par l'utilisateur
+  var searchValue = searchInput.value.trim().toLowerCase();
+
+  // Obtenez tous les liens de la barre de navigation
+  var navLinks = document.querySelectorAll("ul li a");
+
+  // Variable pour vérifier si un lien correspond à la valeur saisie
+  var linkFound = false;
+
+  // Parcourez les liens et filtrez-les en fonction de la valeur saisie
+  for (var i = 0; i < navLinks.length; i++) {
+    var linkText = navLinks[i].textContent.trim().toLowerCase();
+
+    // Vérifiez si le texte du lien contient la valeur saisie
+    if (linkText.includes(searchValue)) {
+      // Rendre le lien visible
+      navLinks[i].style.display = "block";
+      linkFound = true;
+    } else {
+      // Cacher le lien
+      navLinks[i].style.display = "none";
     }
-  });
+  }
 
-  // Afficher un message si aucun résultat n'a été trouvé
-  if (!found) {
-    var message = document.createElement('div');
-    message.textContent = 'Aucun résultat trouvé.';
-    searchResults.appendChild(message);
+  // Affichez un message si aucun lien ne correspond à la valeur saisie
+  if (!linkFound) {
+    messageElement.textContent = "Aucun résultat trouvé.";
+    messageElement.style.color = "red"; // Définir la couleur du texte en rouge
+    messageElement.style.backgroundColor = "white"; // Définir le fond en blanc
+  } else {
+    messageElement.textContent = ""; // Réinitialisez le message si un lien correspond à la valeur saisie
   }
 });
 
-// Fonction pour afficher la section correspondante lorsqu'un lien est cliqué
-document.querySelectorAll('#side-panel a').forEach(function(link) {
-  link.addEventListener('click', function(event) {
-    event.preventDefault(); // Empêcher le comportement par défaut du lien
-    var sectionId = this.getAttribute('href').substring(1); // Obtenir l'identifiant de la section correspondante
-    var sectionToShow = document.getElementById(sectionId); // Récupérer la section correspondante
-    if (sectionToShow) {
-      // Masquer toutes les sections et afficher uniquement la section correspondante
-      document.querySelectorAll('section').forEach(function(section) {
-        section.style.display = 'none';
-      });
-      sectionToShow.style.display = 'block';
-    }
-  });
-});
+

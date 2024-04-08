@@ -1,122 +1,154 @@
-
-.contact-form {
-    margin-top: 20px;
-}
-/* Style commun pour tous les titres de section */
-section h2, section h3 {
-    text-align: center; /* Centrer le titre */
-    padding: 10px; /* Espacement autour du titre */
-    border-radius: 5px; /* Bord arrondi */
-    color: #fff; /* Couleur du texte du titre */
-    background-color: gray; /* Couleur de fond du titre */
-    font-size: 24px;
-}
-
-/* Style pour toutes les sections */
-section {
-    background-color: whitesmoke; /* Couleur de fond pour toutes les sections */
-    position: relative; /* Position relative pour permettre le déplacement */
-    left: 0; /* Position initiale des sections à gauche */
-    transition: left 0.5s; /* Transition pour le déplacement */
-}
-
-section p {
-    text-align: left;
-    margin: 10px 0; /* Marge supérieure et inférieure de 10px pour les paragraphes */
-}
-
-
-/* Ajoutez cette classe au corps lorsque le panneau est ouvert */
-.no-scroll section {
-    right: 250px; /* Déplacement de 250px vers la droite lorsque le panneau est ouvert */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Utilise la hauteur totale de la fenêtre */
+    margin: 0;
+  }
+  
+  
+  
+/* The side navigation menu */
+.sidenav {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #227;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
 }
 
-/* Style pour cacher toutes les sections sauf la section #accueil */
-section:not(#accueil) {
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover,
+.offcanvas a:focus {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+    overflow: hidden;
+    width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #227dea;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+svg {
+    transition: all .5s ease;
+}
+
+svg:hover #transform {
+    transform: rotate(180deg);
+}
+
+#ico {
     display: none;
 }
 
-.container {
-    display: flex;
-    justify-content: flex-end;
-    margin: 10px;
-}
-.image-container img {
-    max-width: 200px; /* Définissez la largeur maximale souhaitée */
-    max-height: 200px; /* Définissez la hauteur maximale souhaitée */
-}
+.menu {
+    background: #000;
+    display: none;
+    padding: 5px;
+    width: 320px;
+    @include border-radius(5px);
+    transition: all 0.5s ease; /* Correction ici */
 
-#messageBox,#previewBox {
-    text-align: center;
-    color: red;
-}
-.actions {
-    margin-bottom: 10px;
-}
+    a {
+        display: block;
+        color: #fff;
+        text-align: center;
+        padding: 10px 2px;
+        margin: 3px 0;
+        text-decoration: none;
+        background: #444;
 
-.actions i {
-    cursor: pointer;
-    margin-right: 10px;
-}
-/* Style pour centrer les images */
-section img {
-    display: block; /* Permet de centrer l'image */
-    margin: 0 auto; /* Centre l'image horizontalement */
-    
-}
+        &:nth-child(1) {
+            margin-top: 0;
+            @include border-radius(3px 3px 0 0);
+        }
 
-.image-container {
-    max-width: 100%; /* Ajustez selon vos besoins */
-    overflow: hidden; /* Empêche le débordement horizontal */
-}
+        &:nth-child(5) {
+            margin-bottom: 0;
+            @include border-radius(0 0 3px 3px);
+        }
 
-.image-container img {
-    width: 100%; /* Remplacez max-width par width */
-    height: auto; /* Pour conserver le rapport hauteur/largeur original de l'image */
+        &:hover {
+            background: #555;
+        }
+    }
 }
-
-.contact-form form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form form label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.contact-form form input[type="text"],
-.contact-form form input[type="email"],
-.contact-form form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-.contact-form form textarea {
-    resize: vertical;
-}
-
-.contact-form form button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.contact-form form button:hover {
-    background-color: #0056b3;
-}
-
 
 

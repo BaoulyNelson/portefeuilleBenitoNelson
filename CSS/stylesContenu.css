@@ -1,0 +1,99 @@
+/* Icône de recherche */
+#searchIcon {
+  color: white;
+  cursor: pointer;
+}
+
+/* Formulaire de recherche (initialement caché) */
+#searchForm {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* Champ de recherche */
+#mySearch {
+  border-radius: 5px 0 0 5px; /* Coins arrondis sur le côté gauche */
+}
+
+/* Bouton de recherche */
+#searchForm button {
+  border-radius: 0 5px 5px 0; /* Coins arrondis sur le côté droit */
+}
+
+/* Message de recherche */
+#message {
+  /* Style du message */
+  color: white;
+}
+
+/* Pour les écrans étroits */
+@media (max-width: 768px) {
+  #searchForm {
+    position: relative;
+    top: auto;
+    right: auto;
+    text-align: right;
+  }
+}
+
+ul {
+  list-style-type: none; /* Supprime les puces */
+}
+
+ul li {
+  margin-bottom: 10px; /* Ajoute un espace entre chaque élément de liste */
+}
+
+ul li a {
+  text-decoration: none; /* Supprime la décoration par défaut des liens */
+  color: #000; /* Couleur du texte */
+  font-family: Arial, sans-serif; /* Police de caractères */
+  font-size: 16px; /* Taille de la police */
+  display: block; /* Permet de faire en sorte que toute la zone de l'élément de liste soit cliquable */
+  padding: 5px; /* Ajoute un espace à l'intérieur de chaque lien */
+}
+
+/* Style pour limiter la largeur des paragraphes dans chaque section */
+#accueil p,
+#projects p,
+#portfolio p,
+#a-propos p,
+#contact p,
+#reseaux-sociaux p,
+#blog p,
+#cv p,
+#temoignages p {
+  max-width: 600px; /* Ajustez cette valeur selon vos besoins */
+}
+
+/* Style de base pour adapter les images aux écrans larges */
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Media query pour les écrans de taille moyenne */
+@media only screen and (max-width: 768px) {
+  .image-container img {
+    max-width: 80%; /* Réduire la largeur des images pour les écrans de taille moyenne */
+  }
+}
+
+/* Media query pour les petits écrans */
+@media only screen and (max-width: 480px) {
+  .image-container img {
+    max-width: 60%; /* Réduire encore plus la largeur des images pour les petits écrans */
+  }
+}
+
+section h2,h3 {
+  display: inline-block; /* Permet au fond de s'adapter uniquement à la largeur du texte */
+  background-color: #f0f0f0; /* Fond gris clair */
+  color: #333; /* Texte noir */
+  padding: 10px; /* Espace autour du titre */
+  margin: 0 auto; /* Centre les titres horizontalement */
+}
+
+

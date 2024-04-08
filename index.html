@@ -3,66 +3,33 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portefeuille</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        integrity="sha384-ZzR93REXOFOVvXvx0YqAeE6XDABRfjqlZhL3eMl4QN2E+KQygk3Knu8qO2IeyWfN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
-    <!-- Styles Bootstrap (CSS) pour la barre de navigation -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="CSS/stylesPanneauLateral.css">
-    <link rel="stylesheet" href="CSS/stylesNav.css">
-    <link rel="stylesheet" href="CSS/stylesDate.css">
-    <link rel="stylesheet" href="CSS/stylesMonterHaut.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/stylesContenu.css">
     <link rel="stylesheet" href="CSS/stylesTableau.css">
     <link rel="stylesheet" href="CSS/stylesFooter.css">
-    <link rel="stylesheet" href="CSS/styles.css">
-    <!-- Include Font Awesome library -->
+    <link rel="stylesheet" href="CSS/stylesMonterHaut.css">
+    <link rel="stylesheet" href="CSS/stylesDate.css">
+
+    <!-- Utilisation de la dernière version de Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-
+    <!-- Utilisation de la dernière version de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
 
 
 <body>
-    <header>
-        <!-- Icône de menu pour les appareils mobiles -->
-        <div id="menu-icon">&#9776;</div>
-    
-        <!-- Barre de navigation principale -->
-        <nav id="menu">
-            <!-- Horloge actuelle (peut être déplacée en CSS si nécessaire) -->
-            <p id="current-time"><i class="fa fa-clock-o"></i></p>
-    
-            <!-- Liste des liens principaux -->
-            
-            <ul>
-                <button type="button" class="btn btn-icon text-white" data-bs-toggle="modal" data-bs-target="#searchModal">
-                    <i class="fas fa-search"></i>
-                </button>
-                <li><a href="#" onclick="showSection('accueil')"><i class="fas fa-home"></i> Accueil</a></li>
-                <li><a href="#" onclick="showSection('projects')"><i class="fas fa-project-diagram"></i> Projets</a></li>
-                <li><a href="#" onclick="showSection('contact')"><i class="fas fa-envelope"></i> Contact</a></li>
-            </ul>
-    
-            <!-- Boutons supplémentaires (recherche, connexion, thème) -->
-            <div class="additional-buttons">
-               
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal" title="S'identifier">
-                    <i class="fas fa-user mr-2"></i>
-                </button>
-                <!-- Boutons de changement de thème -->
-                <a href="#" onclick="changeTheme('light')"><i class="fas fa-sun"></i></a>
-                <a href="#" onclick="changeTheme('dark')"><i class="fas fa-moon"></i></a>
-            </div>
-        </nav>
-    </header>
-    
-    <!-- Panneau latéral pour les appareils mobiles -->
-    <div id="side-panel">
-        <span id="close-btn">&times;</span>
+
+    <div id="sideNavigation" class="sidenav">
+
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <!-- Icône de recherche -->
+        <div id="searchIcon" style="color: white; cursor: pointer;">
+            <i class="fas fa-search"></i>
+        </div>
         <ul>
             <!-- Liens vers différentes sections du site -->
             <li><a href="#accueil"><i class="fas fa-home"></i> Accueil</a></li>
@@ -75,70 +42,79 @@
             <li><a href="#cv"><i class="fas fa-file"></i> CV en Ligne</a></li>
             <li><a href="#temoignages"><i class="fas fa-comments"></i> Témoignages</a></li>
         </ul>
+
     </div>
+
+
+
+
+    <nav class="topnav">
+<!-- Horloge actuelle (peut être déplacée en CSS si nécessaire) -->
+<p id="current-time"><i class="fa fa-clock-o"></i></p>
     
+        <a href="#" onclick="openNav()">
+            <svg width="30" height="30" id="icoOpen">
+                <path d="M0,5 30,5" stroke="#000" stroke-width="5" />
+                <path d="M0,14 30,14" stroke="#000" stroke-width="5" />
+                <path d="M0,23 30,23" stroke="#000" stroke-width="5" />
+            </svg>
 
-    <!-- Modal -->
-    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="searchModalLabel">Recherche de Contenu</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="searchInput" placeholder="Tapez votre recherche...">
-                        <button class="btn btn-outline-secondary" type="button" id="searchButton"><i
-                                class="fas fa-search"></i></button>
-                    </div>
-                    <div id="searchResults"></div>
-                </div>
+
+        </a>
+
+
+        <!-- Formulaire de recherche (initialement caché) -->
+        <form id="searchForm" style="display: none;">
+            <div>
+                <input type="search" id="mySearch" name="q" placeholder="Rechercher..." />
+                <button>Search</button>
             </div>
-        </div>
-    </div>
+            <i id="message"></i>
 
+        </form>
 
-
-    <section id="accueil">
-        <h2>Bienvenue à ma page d'accueil</h2>
-        <p>Bonjour,Je suis Baouly NELSON,originaire de jacmel, informaticien passionné par la technologie et le
-            développement logiciel. Ayant étudié à l'ESIH, j'ai acquis une solide formation en informatique et je
-            continue à me tenir au courant des dernières tendances et technologies du domaine.</p><br>
-
-        <div class="image-container">
-            <img src="IMAGES/baouly.jpg" alt="">
-        </div>
-        <p>
-            Je suis un professionnel de l'informatique avec une passion pour la technologie et l'innovation. Originaire
-            de Jacmel, une ville vibrante et culturellement riche en Haïti, j'ai grandi en étant fasciné par le
-            potentiel de la technologie pour transformer nos vies et améliorer notre société. J'ai étudié l'informatique
-            à l'université, où j'ai acquis des compétences solides dans le développement de logiciels, la gestion de
-            bases de données et la sécurité informatique.
-        <p>
-
-            <br>
-        <p>
-            Ce que je peux faire pour vous :
-            Concevoir et développer des applications logicielles sur mesure pour répondre à vos besoins spécifiques, que
-            ce soit pour une entreprise, une organisation ou un projet personnel.
-            Fournir des conseils et des solutions en matière de sécurité informatique pour protéger vos données et vos
-            systèmes contre les menaces en ligne.
-        </p><br>
-        <p>
-            Offrir des services de consultation en informatique pour aider à optimiser les processus, améliorer
-            l'efficacité opérationnelle et tirer le meilleur parti de la technologie.
-            Collaborer avec des équipes multidisciplinaires pour créer des solutions technologiques innovantes et
-            résoudre des problèmes complexes.</p><br>
-        <p>
-            Partager mes connaissances et mon expérience à travers des formations et des présentations pour aider les
-            autres à développer leurs compétences en informatique et à rester à jour avec les dernières tendances
-            technologiques.
-            N'hésitez pas à me contacter si vous avez besoin d'aide pour vos projets informatiques ou si vous souhaitez
-            discuter de l'avenir passionnant de la technologie !
-
-        </p>
-    </section>
+    </nav>
+    <div id="main">
+        <section id="accueil">
+            <h2>Bienvenue à ma page d'accueil</h2>
+            <p>Bonjour,Je suis Baouly NELSON,originaire de jacmel, informaticien passionné par la technologie et le
+                développement logiciel. Ayant étudié à l'ESIH, j'ai acquis une solide formation en informatique et je
+                continue à me tenir au courant des dernières tendances et technologies du domaine.</p><br>
+    
+            <div class="image-container">
+                <img src="IMAGES/baouly.jpg" alt="">
+            </div>
+            <p>
+                Je suis un professionnel de l'informatique avec une passion pour la technologie et l'innovation. Originaire
+                de Jacmel, une ville vibrante et culturellement riche en Haïti, j'ai grandi en étant fasciné par le
+                potentiel de la technologie pour transformer nos vies et améliorer notre société. J'ai étudié l'informatique
+                à l'université, où j'ai acquis des compétences solides dans le développement de logiciels, la gestion de
+                bases de données et la sécurité informatique.
+            <p>
+    
+                <br>
+            <p>
+                Ce que je peux faire pour vous :
+                Concevoir et développer des applications logicielles sur mesure pour répondre à vos besoins spécifiques, que
+                ce soit pour une entreprise, une organisation ou un projet personnel.
+                Fournir des conseils et des solutions en matière de sécurité informatique pour protéger vos données et vos
+                systèmes contre les menaces en ligne.
+            </p><br>
+            <p>
+                Offrir des services de consultation en informatique pour aider à optimiser les processus, améliorer
+                l'efficacité opérationnelle et tirer le meilleur parti de la technologie.
+                Collaborer avec des équipes multidisciplinaires pour créer des solutions technologiques innovantes et
+                résoudre des problèmes complexes.</p><br>
+            <p>
+                Partager mes connaissances et mon expérience à travers des formations et des présentations pour aider les
+                autres à développer leurs compétences en informatique et à rester à jour avec les dernières tendances
+                technologiques.
+                N'hésitez pas à me contacter si vous avez besoin d'aide pour vos projets informatiques ou si vous souhaitez
+                discuter de l'avenir passionnant de la technologie !
+    
+            </p>
+        </section>
+        
     <section id="projects" style="display: none;">
         <h2>Projets récents</h2>
         <p>Description : J'ai contribué à la création d'un site web e-commerce pour une entreprise de vente en ligne.
@@ -254,7 +230,7 @@
 
     <section id="blog">
         <h2>Blogs</h2>
-        <p>En tant que passionné de [votre domaine], j'ai lancé mon propre blog où je partage mes réflexions, mes
+        <p>En tant que passionné de l'informatique, j'ai lancé mon propre blog où je partage mes réflexions, mes
             expériences et mes conseils. Mon blog est une plateforme où je peux explorer en profondeur les sujets qui
             m'intéressent et partager mes connaissances avec une communauté plus large. Je publie régulièrement des
             articles sur des sujets allant de [thème 1] à [thème 2], et j'encourage mes lecteurs à interagir avec moi en
@@ -295,126 +271,10 @@
             détaillée de mes contributions et des résultats obtenus. Mon portfolio est constamment mis à jour pour
             refléter mes derniers projets et réalisations.</p>
     </section>
-    <!-- Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Connexion/Inscription</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <ul class="nav nav-tabs" id="loginTabs" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login" role="tab"
-                                aria-controls="login" aria-selected="true">Connexion</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="register-tab" data-bs-toggle="tab" href="#register" role="tab"
-                                aria-controls="register" aria-selected="false">Inscription</a>
-                        </li>
-                    </ul>
-                    <div class="tab-content" id="loginTabsContent">
-                        <!-- Connexion Tab -->
-                        <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                            <form>
-                                <div class="mb-3">
-                                    <label for="loginUsername" class="form-label">Nom d'utilisateur</label>
-                                    <input type="text" class="form-control" id="loginUsername" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="loginPassword" class="form-label">Mot de passe</label>
-                                    <input type="password" class="form-control" id="loginPassword" required>
-                                    <div class="mt-2">
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal">Mot de
-                                            passe oublié?</a>
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Se connecter</button>
-                                <div class="mt-2">
-                                    Vous n'avez pas de compte? <a href="#register" data-bs-toggle="tab" role="tab"
-                                        id="switch-to-register">Inscrivez-vous ici</a>.
-                                </div>
-
-                            </form>
-                        </div>
-                        <!-- Inscription Tab -->
-                        <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
-                            <form>
-                                <div class="mb-3">
-                                    <label for="registerFirstName" class="form-label">Prénom</label>
-                                    <input type="text" class="form-control" id="registerFirstName" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="registerLastName" class="form-label">Nom</label>
-                                    <input type="text" class="form-control" id="registerLastName" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="registerEmail" class="form-label">Adresse email</label>
-                                    <input type="email" class="form-control" id="registerEmail" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="registerPassword" class="form-label">Mot de passe</label>
-                                    <input type="password" class="form-control" id="registerPassword" required>
-                                </div>
-                                <button type="submit" class="btn btn-primary">S'inscrire</button>
-                                <div class="mt-2">
-                                    Vous avez déjà un compte? <a href="#login" data-bs-toggle="tab" role="tab"
-                                        id="switch-to-login">Connectez-vous ici</a>.
-                                </div>
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                </div>
-            </div>
-        </div>
     </div>
 
-    <!-- Mot de passe oublié Modal -->
-    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="forgotPasswordModalLabel">Mot de passe oublié</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Entrez l'adresse email associée à votre compte. Nous vous enverrons un lien pour réinitialiser
-                        votre mot de passe.</p>
-                    <form>
-                        <div class="mb-3">
-                            <label for="forgotPasswordEmail" class="form-label">Adresse email</label>
-                            <input type="email" class="form-control" id="forgotPasswordEmail" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Envoyer le lien de réinitialisation</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <script>
-        document.getElementById('switch-to-register').addEventListener('click', function () {
-            var loginTabs = new bootstrap.Tab(document.getElementById('register-tab'));
-            loginTabs.show();
-        });
-
-        document.getElementById('switch-to-login').addEventListener('click', function () {
-            var loginTabs = new bootstrap.Tab(document.getElementById('login-tab'));
-            loginTabs.show();
-        });
-    </script>
-
-    <div id="footer">
+    <div id="footer-container">
+        <footer id="footer">
         <div class="white-icon">
 
             <!-- Icône Whatsapp -->
@@ -470,6 +330,8 @@
         <button id="backToTopBtn" title="Retour en haut">&#9650;</button>
         <p id="copyright">&copy; <span id="current-year"></span> Baouly NELSON inc. Tous droits réservés.</p>
     </div>
+</footer>
+</div>
     <script>
         try {
             // Essayer d'exécuter le script
@@ -478,33 +340,26 @@
             // En cas d'erreur, afficher l'erreur dans la console
             console.error("Erreur JavaScript :", error.message);
         }
-        $(document).ready(function () {
-            $('#loginModal').modal();
-            $('#registerModal').modal();
-        });
+  
 
     </script>
-
-
-    </footer>
-    <!-- Assurez-vous d'ajouter des identifiants (id) à chaque section pour les liens du menu -->
-    <script src="https://kit.fontawesome.com/4675b5c56a.js" crossorigin="anonymous"></script>
+   <!-- Assurez-vous que les scripts personnalisés sont nécessaires et mis à jour -->
+   <script src="SCRIPT/script.js"></script>
+   <script src="SCRIPT/scriptRecherche.js"></script>
+   <script src="SCRIPT/scriptMonterHaut.js"></script>
+   <script src="SCRIPT/scriptDate.js"></script>
 
     <!-- Scripts Bootstrap (JS) pour la barre de navigation -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
+    <!-- Utilisation de Font Awesome via le CDN -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-    <script src="SCRIPT/scriptPanneauLateral.js"></script>
-    <script src="SCRIPT/scriptDate.js"></script>
-    <script src="SCRIPT/scriptMenu.js"></script>
-    <script src="SCRIPT/scriptMonterHaut.js"></script>
-    <script src="SCRIPT/scriptNav.js"></script>
-    <script src="SCRIPT/scriptRecherche.js"></script>
+ 
 
 
 </body>
