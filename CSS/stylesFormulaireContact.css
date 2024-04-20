@@ -1,0 +1,86 @@
+/* Styles for form container */
+.custom-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for form labels */
+.custom-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Styles for form inputs */
+.custom-form input[type="text"],
+.custom-form input[type="email"],
+.custom-form input[type="password"],
+.custom-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+/* Styles for submit button */
+.custom-form button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.custom-form button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#wordCount {
+    /* Ajoutez ici vos styles personnalisés */
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+#passwordRequirements {
+    margin-top: 10px;
+}
+
+#passwordRequirements p {
+    margin-bottom: 5px;
+}
+
+#passwordRequirements ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#passwordRequirements li {
+    color: red;
+    display: none;
+}
+
+.icon {
+    display: none;
+    margin-left: 5px;
+}
+
+.icon.show {
+    display: inline-block;
+    color: green;
+}

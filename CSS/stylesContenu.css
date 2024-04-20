@@ -77,14 +77,14 @@ ul li a {
 /* Media query pour les écrans de taille moyenne */
 @media only screen and (max-width: 768px) {
   .image-container img {
-    max-width: 80%; /* Réduire la largeur des images pour les écrans de taille moyenne */
+    max-width: 100%; /* Réduire la largeur des images pour les écrans de taille moyenne */
   }
 }
 
 /* Media query pour les petits écrans */
 @media only screen and (max-width: 480px) {
   .image-container img {
-    max-width: 60%; /* Réduire encore plus la largeur des images pour les petits écrans */
+    max-width: 100%; /* Réduire encore plus la largeur des images pour les petits écrans */
   }
 }
 

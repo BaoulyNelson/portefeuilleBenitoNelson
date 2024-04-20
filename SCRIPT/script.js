@@ -1,6 +1,15 @@
 function openNav() {
-    document.getElementById("sideNavigation").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
+  var sideNav = document.querySelector(".sidenav");
+  var mainContent = document.getElementById("main");
+  var screenWidth = window.innerWidth;
+  
+  if (screenWidth <= 768) {
+      sideNav.style.width = "100%";
+      mainContent.style.marginLeft = "100%";
+  } else {
+      sideNav.style.width = "250px";
+      mainContent.style.marginLeft = "250px";
+  }
 }
 function closeNav() {
     document.getElementById("sideNavigation").style.width = "0";
