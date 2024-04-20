@@ -22,20 +22,3 @@ setInterval(updateTime, 1000);
 
 // Appelez updateTime une fois pour afficher l'heure initiale
 updateTime();
-
-function submitToGoogleForms() {
-    var nom = document.getElementById('nom').value;
-    var prenom = document.getElementById('prenom').value;
-    var message = document.getElementById('message').value;
-    
-    var iframe = document.querySelector('iframe');
-    var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-    
-    // Remplissez les champs du formulaire Google avec les données du formulaire HTML
-    iframeDoc.getElementById('entry.nom').value = nom;
-    iframeDoc.getElementById('entry.prenom').value = prenom;
-    iframeDoc.getElementById('entry.message').value = message;
-    
-    // Soumettre le formulaire Google intégré
-    iframeDoc.getElementById('mG61Hd').submit(); // L'ID 'mG61Hd' doit être remplacé par l'ID réel de votre formulaire Google
-  }

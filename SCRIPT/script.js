@@ -12,9 +12,19 @@ function openNav() {
   }
 }
 function closeNav() {
-    document.getElementById("sideNavigation").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
+  var sideNav = document.querySelector(".sidenav");
+  var mainContent = document.getElementById("main");
+  var screenWidth = window.innerWidth;
+  
+  if (screenWidth <= 768) {
+      sideNav.style.width = "0";
+      mainContent.style.marginLeft = "0";
+  } else {
+      sideNav.style.width = "0";
+      mainContent.style.marginLeft = "0";
+  }
 }
+
 
 // Obtenez tous les liens de la barre de navigation
 var navLinks = document.querySelectorAll("ul li a");
