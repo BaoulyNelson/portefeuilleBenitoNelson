@@ -1,96 +1,129 @@
 body {
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    /* Police de caractères par défaut pour tout le corps de la page */
+    margin: 0;
+    /* Supprime les marges par défaut du corps */
+    padding: 0;
+    /* Supprime les paddings par défaut du corps */
+    overflow-x: hidden;
+    /* Empêche le défilement horizontal */
+}
+
+#current-time {
+    position: fixed; /* Fixe l'élément en position absolue */
+    top: 50%; /* Place l'élément à 50% du haut de la fenêtre */
+    left: 50%; /* Place l'élément à 50% de la largeur de la fenêtre */
+    transform: translate(-50%, -50%); /* Centre l'élément par rapport à ses dimensions */
+    color: white; /* Couleur du texte en blanc */
+    font-size: 24px; /* Taille de la police */
+}
+
+#main {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Utilise la hauteur totale de la fenêtre */
-    margin: 0;
-    overflow-x: hidden;
-
-  }
-  
-
-
-   
-/* Add a black background color to the top navigation */
-.topnav {
-    background-color: #227dea;
-    overflow: hidden;
+    align-items: center;
+    justify-content: flex-start;
+    /* Change justify-content pour flex-start pour aligner les éléments au début */
+    height: auto;
+    /* Utilisation de height: auto pour permettre à #main de s'ajuster à la taille de son contenu */
+    padding: 20px;
+    /* Ajoute un padding pour séparer le contenu des bords de #main */
+    box-sizing: border-box;
+    /* Inclut le padding dans la largeur/hauteur de #main */
+    overflow-y: auto;
+    /* Active le scrolling vertical si le contenu dépasse la hauteur de #main */
 }
 
-/* Style the links inside the navigation bar */
-.topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
+#main section {
+    margin: 10px 0;
+    width: 80%;
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+    margin-top: 50px;
+    margin-bottom: 100px;
 }
 
-/* Change the color of links on hover */
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
+section h2,
+section h3 {
+    display: inline-block;
+    /* Permet au fond de s'adapter uniquement à la largeur du texte */
+    background-color: #f0f0f0;
+    /* Fond gris clair */
+    color: #333;
+    /* Texte noir */
+    padding: 10px;
+    /* Espace autour du titre */
+    margin: 10px 0;
+    /* Marges en haut et en bas */
+    border-radius: 5px;
+    /* Arrondit les coins */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Ajoute une ombre légère */
 }
 
-/* Add a color to the active/current link */
-.topnav a.active {
-    background-color: #4CAF50;
-    color: white;
+section p {
+    background-color: white;
+    /* Fond légèrement différent pour les paragraphes */
+    color: #333;
+    /* Texte noir */
+    padding: 15px;
+    /* Espace autour du paragraphe */
+    margin: 15px 0;
+    /* Marges en haut et en bas */
+    border-radius: 5px;
+    /* Arrondit les coins */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Ajoute une ombre légère */
+    text-align: left;
+    /* Aligne le texte à gauche */
+    max-width: 800px;
+    /* Limite la largeur maximale */
+    width: 100%;
+    /* Assure que les paragraphes prennent toute la largeur disponible */
+    box-sizing: border-box;
+    /* Inclut le padding dans la largeur */
 }
 
 
 
-svg {
-    transition: all .5s ease;
+/* Styles par défaut pour les images */
+.image-container img {
+    width: 100%;
+    /* Les images prennent toute la largeur du conteneur */
+    height: auto;
+    /* Maintient le ratio d'aspect des images */
 }
 
-svg:hover #transform {
-    transform: rotate(180deg);
-}
-
-#ico {
-    display: none;
-}
-
-.menu {
-    background: #000;
-    display: none;
-    padding: 5px;
-    width: 320px;
-    @include border-radius(5px);
-    transition: all 0.5s ease; /* Correction ici */
-
-    a {
-        display: block;
-        color: #fff;
-        text-align: center;
-        padding: 10px 2px;
-        margin: 3px 0;
-        text-decoration: none;
-        background: #444;
-
-        &:nth-child(1) {
-            margin-top: 0;
-            @include border-radius(3px 3px 0 0);
-        }
-
-        &:nth-child(5) {
-            margin-bottom: 0;
-            @include border-radius(0 0 3px 3px);
-        }
-
-        &:hover {
-            background: #555;
-        }
+/* Media query pour les écrans larges */
+@media (min-width: 768px) {
+    .image-container img {
+        width: 50%;
+        /* Les images prennent 50% de la largeur du conteneur */
     }
 }
-/* Style de base pour le menu de navigation latéral */
+
+/* Media query pour les écrans extra larges */
+@media (min-width: 1200px) {
+    .image-container img {
+        width: 33.33%;
+        /* Les images prennent un tiers de la largeur du conteneur */
+    }
+}
+
+/* Media query pour les écrans petits */
+@media (max-width: 767px) {
+    .image-container img {
+        width: 100%;
+        /* Les images prennent toute la largeur du conteneur */
+    }
+}
+
+/* Réglage de la position des éléments du panneau */
 .sidenav {
     height: 100%;
-    width: 0; /* Définir la largeur initiale à 0 */
+    width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 20000;
     top: 0;
     left: 0;
     background-color: #227;
@@ -99,49 +132,378 @@ svg:hover #transform {
     transition: 0.5s;
 }
 
-/* Styles supplémentaires pour le menu de navigation latéral */
+/* Style pour les liens dans le panneau latéral */
 .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: 10px 15px;
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-.sidenav a:hover,
-.offcanvas a:focus {
+    font-size: 18px;
     color: #f1f1f1;
+    display: inline-block;
+    transition: 0.3s;
+    border-left: 4px solid transparent;
 }
 
+/* Style pour la liste dans le panneau latéral */
+.sidenav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style pour les liens au survol */
+.sidenav a:hover {
+    border-right: 4px solid #007BFF;
+    color: red;
+    border-left: 4px solid #007BFF;
+    background-color: #333;
+    transform: translateX(5px);
+}
+
+/* Ajouter un effet de surbrillance sur le texte */
+.sidenav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #007BFF;
+    transition: width 0.3s;
+}
+
+.sidenav a:hover::after {
+    width: 100%;
+    transition: width 0.3s;
+}
+
+/* Style pour le bouton de fermeture */
 .sidenav .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-/* Style du contenu principal */
-#main {
-    transition: margin-left .5s;
-    padding: 20px;
-    overflow: hidden;
+/* Style pour l'état au survol */
+.sidenav .closebtn:hover {
+    color: #f00;
+}
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    margin-left: 0; /* Assurez-vous que le contenu principal est aligné à gauche */
+    z-index: 1000;
+    margin-bottom: 50px;
+    /* Ajoute une marge en bas pour créer de l'espace avec le contenu */
 }
 
- 
-  
-  /* Media query pour les écrans larges */
-  @media screen and (min-width: 768px) {
-    #sideNavigation {
-      width: 250px;
-    }
-    
 
-    #main {
-      margin-left: 250px;
-    }
-  }
+/* Style pour les éléments à gauche de la barre de navigation */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
 
+.nav-left a,
+.nav-left #searchIcon {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+
+/* Style pour le formulaire de recherche */
+#searchForm {
+    display: none;
+    position: absolute; /* Changement de la position à "fixed" pour le maintenir en place */
+    top: 10px; /* Ajustement de la position verticale */
+    left: 20px; /* Ajustement de la position horizontale */
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Style pour le champ de recherche */
+#searchForm input[type="search"] {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 100px); /* Calcul de la largeur du champ de recherche pour laisser de l'espace pour le bouton */
+    transition: border-color 0.3s ease;
+    display: inline-block; /* Ajout pour rendre le champ de recherche et le bouton en ligne */
+}
+
+/* Style pour le bouton du formulaire */
+#searchForm button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Ajout pour rendre le champ de recherche et le bouton en ligne */
+    vertical-align: top; /* Aligner le bouton avec le haut du champ de recherche */
+}
+
+#searchForm input[type="search"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+
+#searchForm button:hover {
+    background-color: #0056b3;
+}
+
+#searchIcon {
+    cursor: pointer;
+}
+
+/* Message de recherche */
+#searchResultMessage {
+    /* Style du message */
+    color: black;
+    background-color: red;
+}
+
+/* Style pour le bouton du formulaire sur les petits écrans */
+@media screen and (max-width: 768px) {
+    #searchForm button {
+        margin-left: 0; /* Retrait de la marge à gauche */
+        margin-top: 10px; /* Ajout d'une marge en haut pour l'espacement sur les petits écrans */
+        width: calc(50% - 5px); /* Ajustement de la largeur pour s'adapter à la taille de l'écran */
+    }
+}
+
+/* Centre le tableau */
+.family-section {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+/* Applique une couleur de fond au tableau */
+.family-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #f5f5f5;
+    /* Changez cette couleur selon vos préférences */
+}
+
+/* Styles pour le titre de la section */
+.section-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Styles pour les en-têtes du tableau */
+.family-table th {
+    background-color: #227;
+
+    padding: 10px;
+    border: 1px solid #227;
+}
+
+/* Styles pour les cellules du tableau */
+.family-table td {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+/* Styles spécifiques pour la colonne des noms */
+.family-table td ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.family-table td ul li {
+    margin-bottom: 5px;
+}
+
+/* Styles pour la première colonne (Rôle) */
+.family-table td:first-child {
+    font-weight: bold;
+}
+
+/* Styles pour les lignes impaires du tableau */
+.family-table tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Styles for form container */
+.custom-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for form labels */
+.custom-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Styles for form inputs */
+.custom-form input[type="text"],
+.custom-form input[type="email"],
+.custom-form input[type="password"],
+.custom-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Styles for submit button */
+.custom-form button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.custom-form button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#wordCount {
+    /* Ajoutez ici vos styles personnalisés */
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+#passwordRequirements {
+    margin-top: 10px;
+}
+
+#passwordRequirements p {
+    margin-bottom: 5px;
+}
+
+#passwordRequirements ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#passwordRequirements li {
+    color: red;
+    display: none;
+}
+
+.icon {
+    display: none;
+    margin-left: 5px;
+}
+
+.icon.show {
+    display: inline-block;
+    color: green;
+}
+
+/* Style global pour le footer */
+#footer-container {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    /* Réduire le padding du footer */
+    margin-top: 100px;
+    /* Ajoute une marge en haut pour créer de l'espace avec le contenu */
+
+}
+
+/* Style pour les icônes */
+#footer .white-icon {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    /* Réduire l'espacement entre les icônes */
+    padding: 5px 0;
+    /* Réduire le padding des icônes */
+}
+
+#footer .white-icon a {
+    color: #fff;
+    font-size: 20px;
+    /* Réduire la taille des icônes */
+    text-decoration: none;
+    /* Supprimer le soulignement */
+    transition: color 0.3s ease;
+}
+
+#footer .white-icon a:hover {
+    color: #ff6347;
+    /* couleur de survol attrayante */
+}
+
+/* Style pour les paragraphes */
+#footer p {
+    margin: 3px 0;
+    /* Réduire les marges des paragraphes */
+    font-size: 14px;
+}
+
+/* Style pour le bouton de retour en haut */
+#backToTopBtn {
+    background-color: #ff6347;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    display: none;
+    /* caché par défaut */
+}
+
+#backToTopBtn:hover {
+    background-color: #555;
+}
+
+/* Style pour le copyright */
+#copyright {
+    margin-top: 5px;
+    /* Réduire la marge supérieure du copyright */
+    font-size: 12px;
+}
